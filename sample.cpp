@@ -31,9 +31,39 @@ Address user_address;
 int num_issued_book;
 Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
 }user[1000];//array of structure for the user.
+
+
+void welcome();
+
+
 int main(){
-  
+ void welcome(); 
 
 
 return 0;
 }
+
+//This function is used to generate a welcome page
+void welcome(){
+ system("cls");
+  cout<<"\t%%      %%      ";
+       cout<<"\n\t%%      %% %%%%%%% %%      %%%%%%  %%%%%% %%%%  %%%% %%%%%%%";
+       cout<<"\n\t%%      %% %%      %%      %%      %%  %% %%  %%% %% %%       ";
+
+
+       cout<<"\n\t%%  %%  %% %%%%%   %%      %%      %%  %% %%  %%% %% %%%%%      ";
+       cout<<"\n\t%%  %%  %% %%      %%      %%      %%  %% %%      %% %%           ";
+       cout<<"\n\t%%%%%%%%%% %%%%%%% %%%%%%% %%%%%%% %%%%%% %%      %% %%%%%%%     ";
+       cout<<"\n\n\t\t\t        $$$$$$$$  $$$$$        ";
+       cout<<"\n\t\t\t           $$     $   $      ";
+       cout<<"\n\t\t\t           $$     $$$$$    ";
+
+       cout<<"\n\n\n\t\t\t  (******** 5M LIBERARY  *******)";
+        cout<<"\n\n\n --->  Made By: Group 1 ";
+        cout<<"\n --->  AASTU 2021 All right reserved  ";
+
+cout<<"\n\n\n";
+
+}
+
+
