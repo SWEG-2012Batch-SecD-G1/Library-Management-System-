@@ -30,7 +30,7 @@ int age;
 Address user_address;
 int num_issued_book;
 Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
-};
+}user[1000];//array of structure for the user.
 int main(){
   
 
