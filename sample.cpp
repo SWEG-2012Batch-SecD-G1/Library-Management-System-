@@ -34,11 +34,35 @@ Book issued_book[2];// the user can only borrow 2 books at the same time( this i
 
 
 void welcome();
+char user_option();
+int main_menu();
 
 
 int main(){
- void welcome(); 
+ welcome(); 
 
+ int choose;
+choose=main_menu();
+do{
+
+switch(choose){
+	case 1:
+		admin_option();
+	break;
+	case 2:
+		user_option();
+	break;
+	 
+	 default :{
+	 	cout<<"You entered the wrong number. ";
+
+}
+}
+	
+}
+while(choose!=3);
+
+ 
 
 return 0;
 }
@@ -64,6 +88,44 @@ void welcome(){
 
 cout<<"\n\n\n";
 
+}
+
+
+int main_menu(){
+int choose; 
+cout<<"\n\n\n\n\t\t\t***********************************************************************\n";
+cout<<"\t\t\t\t 5M library management system\t\t\t\t\t\t\t\t                                 \n";
+cout<<"\t\t\t*************************************************************************\n";
+
+cout<<"\t\t\t1: Admin\n\t\t\t2: User\n\t\t\t3: Exit \n\n\n";
+cout<<"\t\t\t>> please insert your choice ---> ";
+cin>>choose;
+
+return choose;
+
+
+}
+
+char user_option(){
+
+system ("cls");
+ char choice;
+       cout <<"\n\n\n\n"<<endl;
+        cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
+        cout << setw(15)<< char(176)<<"search books by"<<endl;
+        cout << setw(20)<< char(176)<<"a, Title"<<endl;
+        cout << setw(20)<< char(176)<<"b, Author"<<endl;
+        cout << setw(20)<< char(176)<<"c, ISBN"<<endl;
+        cout << setw(15)<< char(176)<<"List books by"<<endl;
+        cout << setw(20)<< char(176)<<"d, category"<<endl;
+        cout << setw(20)<< char(176)<<"e, Most read"<<endl;
+        cout << setw(20)<< char(176)<<"f, Rating "<<endl;
+         cout << setw(20)<< char(176)<<"g, Recent books"<<endl;
+          cout << setw(20)<< char(176)<<"h, All books"<<endl;
+        cout << setw(15)<< char(176)<<endl;
+        cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
+        cin>>choice;
+        return choice;
 }
 
 
