@@ -32,7 +32,7 @@ int num_issued_book;
 Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
 }user[1000];//array of structure for the user.
 
-
+//Declaration of Functions  
 void welcome();
 char user_option();
 int main_menu();
@@ -90,7 +90,7 @@ cout<<"\n\n\n";
 
 }
 
-
+//This is a function that enables the person who access is whether a user or admin
 int main_menu(){
 int choose; 
 cout<<"\n\n\n\n\t\t\t***********************************************************************\n";
@@ -105,7 +105,7 @@ return choose;
 
 
 }
-
+//This function lists the services that the user will get in the library  
 char user_option(){
 
 system ("cls");
