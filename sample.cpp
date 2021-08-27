@@ -108,7 +108,8 @@ return choose;
 //This function lists the services that the user will get in the library  
 char user_option(){
 
-system ("cls");
+Clrscr();
+
  char choice;
        cout <<"\n\n\n\n"<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
@@ -122,9 +123,34 @@ system ("cls");
         cout << setw(20)<< char(176)<<"f, Rating "<<endl;
          cout << setw(20)<< char(176)<<"g, Recent books"<<endl;
           cout << setw(20)<< char(176)<<"h, All books"<<endl;
+         cout<<setw(20)<<char(176)<<"i,back to menu"<<endl;
         cout << setw(15)<< char(176)<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
         cin>>choice;
+   switch(choice)
+{
+   case a: Clrscr();
+           Title ();
+           break;
+ case b:Author ();
+       break;
+case c:ISBN();
+       break;
+case d: category();
+       break;
+ case e:Most read();
+        break;
+case f:Rating();
+      break;
+case g:Recent books();
+       break;
+case h:All nooks();
+      break;
+case i:return;
+default:{
+cout<<"you enterd inappropriate character.please try again!!"}
+            
+}
         return choice;
 }
 
