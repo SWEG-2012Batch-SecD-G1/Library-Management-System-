@@ -142,9 +142,9 @@ case d: category();
         break;
 case f:Rating();
       break;
-case g:Recent books();
+case g:Recent book();
        break;
-case h:All nooks();
+case h:All book();
       break;
 case i:return;
 default:{
