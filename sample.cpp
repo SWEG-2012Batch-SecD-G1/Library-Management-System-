@@ -44,6 +44,7 @@ void memberRegistration();
 
 
 int main(){
+	
  welcome(); 
 main_menu();
 do{
@@ -94,7 +95,7 @@ cout<<"\n\n\n";
 }
 
 //This is a function that enables the person who access is whether a user or admin
-int main_menu(){
+void main_menu(){
 system ("cls");
  int choice;
        cout <<"\n\n\n\n"<<endl;
@@ -106,19 +107,17 @@ system ("cls");
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
         cin>>choice;
 
-
          switch (choice){
     case 1:
       user_option();
         break;
-
     case 2:
     admin_option ();
         break;
+    case 3:
+        cout<<"\n\n\nThank You For Using Our Program...Bye!\n";
+        exit (EXIT_SUCCESS);
     }
-
-
-}
 
 }
 //This function lists the services that the user will get in the library  
@@ -172,7 +171,7 @@ cout<<"you enterd inappropriate character.please try again!!"}
  // This is a function to register multiple members at once
 void memberRegistration(){
 
-        addanother:
+        addanother: // to register multiple members at once
 
 
          cout<<"Enter Name : "; getline(cin,user[Ucounter].name);
