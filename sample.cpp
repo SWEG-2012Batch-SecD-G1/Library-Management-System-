@@ -210,7 +210,43 @@ transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
       counter++;
             }
         }
+if (counter>0){
+   display (Num_search,counter);
+}
+else{
+
+  cout<<"NO Search Result found...!\n";
+   system("pause");
+   user_option();
+}
+   break;
     }
 }
+case 'b':{cin.ignore();
+system ("cls");
+cout <<"\n\n\n"<<"           "<<"Please insert the Author of the book"<<endl;
+string searchName,temp_autohr;
+getline (cin, searchName);
+ transform (searchName.begin(),searchName.end(),searchName.begin(),:: tolower);
+
+for (int i=0;i<Bcounter;i++){
+    temp_autohr=book[i].author;
+transform (temp_autohr.begin(),temp_autohr.end(),temp_autohr.begin(),:: tolower);
+        if (temp_autohr==searchName){
+      Num_search[counter]=i;
+      counter++;
+        }
+    }
+if (counter>0){
+   display (Num_search,counter);
+}
+else{
+
+  cout<<"NO Search Result found...!\n";
+   system("pause");
+   user_option();
+    }
+}
+break;
 }
 
