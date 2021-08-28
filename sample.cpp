@@ -221,7 +221,6 @@ else{
 }
    break;
     }
-}
 case 'b':{cin.ignore();
 system ("cls");
 cout <<"\n\n\n"<<"           "<<"Please insert the Author of the book"<<endl;
@@ -246,7 +245,31 @@ else{
    system("pause");
    user_option();
     }
+break;
+}
+case 'c':{;
+system ("cls");
+cout <<"\n\n\n"<<"           "<<"Please insert the ISBN of the book"<<endl;
+int isbn;
+cin >>isbn;
+for (int i=0;i<=Bcounter;i++){
+if (isbn==book[i].isbn){
+        Num_search[counter]=i;
+    counter++;
+                }
+            }
+if (counter>0){
+   display (Num_search,counter);
+}
+else{
+
+  cout<<"NO Search Result found...!\n";
+  system("pause");
+  user_option();
 }
 break;
+        }
+    }
+
 }
 
