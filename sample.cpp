@@ -36,7 +36,7 @@ int num_issued_book;
 Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
 }user[1000];//array of structure for the user.
 
-//Declaration of Functions  
+//Declaration of Functions
 void welcome();
 char user_option();
 void main_menu();
@@ -44,8 +44,8 @@ void memberRegistration();
 
 
 int main(){
-	
- welcome(); 
+
+ welcome();
 main_menu();
 do{
 
@@ -56,17 +56,17 @@ switch(choose){
 	case 2:
 		user_option();
 	break;
-	 
+
 	 default :{
 	 	cout<<"You entered the wrong number. ";
 
 }
 }
-	
+
 }
 while(choose!=3);
 
- 
+
 
 return 0;
 }
@@ -120,7 +120,7 @@ system ("cls");
     }
 
 }
-//This function lists the services that the user will get in the library  
+//This function lists the services that the user will get in the library
 char user_option(){
 
 Clrscr();
@@ -164,7 +164,7 @@ case h:All book();
 case i:return;
 default:{
 cout<<"you enterd inappropriate character.please try again!!"}
-            
+
 }
         return choice;
 }
@@ -192,5 +192,25 @@ void memberRegistration(){
         goto addanother;
 
 
+}
+void search1 (char a){
+int Num_search[Bcounter],counter=0;
+switch (a){
+case 'a':{cin.ignore();
+system ("cls");
+cout<<"\n\n\n"<<"           "<<"Please insert the title of the book"<<endl;
+string searchName,temp_title;
+getline (cin, searchName);
+ transform (searchName.begin(),searchName.end(),searchName.begin(),:: tolower);
+for (int i=0;i<Bcounter;i++){
+    temp_title=book[i].title;
+transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
+        if (temp_title==searchName){
+      Num_search[counter]=i;
+      counter++;
+            }
+        }
+    }
+}
 }
 
