@@ -41,6 +41,7 @@ void welcome();
 char user_option();
 void main_menu();
 void memberRegistration();
+void search1 (char a);
 
 
 int main(){
