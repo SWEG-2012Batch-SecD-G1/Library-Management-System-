@@ -266,7 +266,7 @@ break;
     }
 
 }
-
+//this function lists the books by there category.
 void list_by_catagory(){
             system("cls");
        cout <<"\n\n\n\n"<<endl;
