@@ -437,21 +437,7 @@ display (Num_search,counter);
 Backoption('u');
 }
 
-// this is a function that lists books that are recently browsed inthe program 
-void recent_books(){
-    int Num_search[Bcounter],counter=0;
 
-            for (int j=0;j<Bcounter;j++){
-        if (book[j].date_of_pub.yy>=2020){
-            Num_search[counter]=j;
-            counter++;
-        }
-
-    }
-
-display (Num_search,counter);
-Backoption('u');
-}
   //this function  lists all the books that  currently exist in a library
 void all_books(char p){
     int Num_search[Bcounter],count;
