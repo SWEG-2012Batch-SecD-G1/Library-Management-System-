@@ -38,38 +38,31 @@ Book issued_book[2];// the user can only borrow 2 books at the same time( this i
 
 //Declaration of Functions
 void welcome();
-char user_option();
+void user_option();
 void main_menu();
 void memberRegistration();
 void search1 (char a);
+void list_by_catagory();
 
+
+
+int i,Bcounter=5,j;//  temporary declaration
+int Ucounter;
+
+//*************************************
+bool stop=false;
 
 int main(){
 
- welcome();
-main_menu();
-do{
+welcome();
+sampleData();
 
-switch(choose){
-	case 1:
-		admin_option();
-	break;
-	case 2:
-		user_option();
-	break;
-
-	 default :{
-	 	cout<<"You entered the wrong number. ";
-
+while(!stop){
+   main_menu();
 }
-}
-
-}
-while(choose!=3);
-
-
 
 return 0;
+
 }
 
 //This function is used to generate a welcome page
@@ -274,3 +267,125 @@ break;
 
 }
 
+void list_by_catagory(){
+            system("cls");
+       cout <<"\n\n\n\n"<<endl;
+        cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
+        cout << setw(15)<< char(176)<<"choose category "<<endl;
+        cout << setw(20)<< char(176)<<"a, Fiction "<<endl;
+        cout << setw(20)<< char(176)<<"b, Science "<<endl;
+        cout << setw(20)<< char(176)<<"c, Art"<<endl;
+        cout << setw(20)<< char(176)<<"d, Self help"<<endl;
+        cout << setw(20)<< char(176)<<"e, Religious"<<endl;
+        cout << setw(20)<< char(176)<<"f, Social science "<<endl;
+        cout << setw(20)<< char(176)<<"g, Amharic"<<endl;
+        cout << setw(20)<< char(176)<<"h, Research book"<<endl;
+        cout << setw(20)<< char(176)<<"i, Programing "<<endl;
+        cout << setw(20)<< char(176)<<"j, Back "<<endl;
+int counter=0;
+char choice;
+cin >>choice;
+int Num_search[Bcounter];
+switch (choice){
+case 'a':{for (int i=0;i<=Bcounter;i++){
+if ((book[i].catagory=="Fiction")){
+     Num_search[counter]=i;
+    counter++;
+    }
+}
+
+display (Num_search,counter);
+Backoption('u');
+break;
+}
+
+case 'b':{ for (int i=1;i<=Bcounter;i++){
+    if ((book[i].catagory=="Science")){
+     Num_search[counter]=i;
+    counter++;
+    }
+}
+display (Num_search,counter);
+Backoption('u');
+break;
+}
+
+case 'c':
+    {for (int i=1;i<=Bcounter;i++){
+    if ((book[i].catagory=="Art")){
+Num_search[counter]=i;
+    counter++;
+}
+display (Num_search,counter);
+Backoption('u');
+break;
+}
+
+case 'd': {for (int i=0;i<Bcounter;i++){
+    if ((book[i].catagory=="Self help")){
+Num_search[counter]=i;
+    counter++;
+    }
+}
+display (Num_search,counter);
+Backoption('u');
+break;
+}
+
+case 'e': {for (int i=0;i<Bcounter;i++){
+    if ((book[i].catagory=="Religious")){
+Num_search[counter]=i;
+    counter++;
+    }
+}
+display (Num_search,counter);
+Backoption('u');
+break;
+}
+case 'f': {for (int i=0;i<Bcounter;i++){
+    if ((book[i].catagory=="Social science")){
+Num_search[counter]=i;
+    counter++;
+    }
+}
+display (Num_search,counter);
+Backoption('u');
+break;
+}
+case 'g': {for (int i=0;i<Bcounter;i++){
+    if ((book[i].catagory=="Amharic")){
+    Num_search[counter]=i;
+    counter++;
+    }
+}
+display (Num_search,counter);
+Backoption('u');
+break;
+}
+
+case 'h': {for (int i=0;i<Bcounter;i++){
+    if ((book[i].catagory=="Research books")){
+    Num_search[counter]=i;
+    counter++;
+    }
+}
+display (Num_search,counter);
+Backoption('u');
+break;
+            }
+        }
+case 'i': {for (int i=0;i<Bcounter;i++){
+    if ((book[i].catagory=="Programming")){
+        Num_search[counter]=i;
+    counter++;
+        }
+    }
+display (Num_search,counter);
+Backoption('u');
+break;
+            }
+case 'j':
+    user_option();
+    break;
+        }
+}
