@@ -389,3 +389,80 @@ case 'j':
     break;
         }
 }
+
+
+  // this is a function that lists books depending on how often they are read
+void most_read_book(){
+    int Num_search[Bcounter],counter=0;
+    for (int i=0;i<Bcounter;i++){
+    if (book[i].read_freq>=2){
+        Num_search[counter]=i;
+    counter++;
+                }
+                }
+
+    display (Num_search,counter);
+    Backoption('u');
+
+}
+
+// this is a function that lists books depending on rating given to the book by users at time return after issuing
+void by_rating(){
+    int Num_search[Bcounter],counter=0,counterr=0;
+    float arr[Bcounter];
+    for (int i=0;i<Bcounter;i++)
+      arr[i]=book[i].rate;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    float arr1[Bcounter];
+sort(arr, arr + n);
+
+for(int i=0; i<n;i++){
+       if(arr[i]!=arr[i+1])
+            {
+                arr1[counterr]=arr[i];
+                counterr++;
+
+            }
+}
+
+for(int i=counterr; i>=0;i--)
+    for(int j=0;j<Bcounter;j++){
+       if(arr1[i]==book[j].rate){
+  Num_search[counter]=j;
+            counter++;
+}
+    }
+
+display (Num_search,counter);
+Backoption('u');
+}
+
+// this is a function that lists books that are recently browsed inthe program 
+void recent_books(){
+    int Num_search[Bcounter],counter=0;
+
+            for (int j=0;j<Bcounter;j++){
+        if (book[j].date_of_pub.yy>=2020){
+            Num_search[counter]=j;
+            counter++;
+        }
+
+    }
+
+display (Num_search,counter);
+Backoption('u');
+}
+  //this function  lists all the books that  currently exist in a library
+void all_books(char p){
+    int Num_search[Bcounter],count;
+    for (int i=0;i<Bcounter;i++){
+        Num_search[i]=i;
+    }
+
+    display (Num_search,Bcounter);
+
+        Backoption(p);
+
+}
+
+
