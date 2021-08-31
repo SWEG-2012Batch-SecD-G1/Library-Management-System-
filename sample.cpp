@@ -43,8 +43,8 @@ void main_menu();
 void memberRegistration();
 void search1 (char a);
 void list_by_catagory();
-
-
+void addbook();
+void ModifyBookDetail();
 
 int i,Bcounter=5,j;//  temporary declaration
 int Ucounter;
@@ -467,5 +467,65 @@ void all_books(char p){
         Backoption(p);
 
 }
+
+//This is a function to add books to the library
+void addbook(){
+system("cls");
+    addanother;
+    cout<<"Add Book details "<<endl;
+
+   cout<<"Enter book Title : ";    getline(cin,book[Bcounter].title);
+   cout<<"Enter Author's Name   : ";  getline(cin,book[Bcounter].author);
+   cout<<"Enter Shelf number : ";  getline(cin,book[Bcounter].shelf_no);
+   cout<<"Enter Book Id : ";   getline(cin,book[Bcounter].book_id);
+   cout<<"Enter Book category  : ";  getline(cin,book[Bcounter].catagory);
+   cout<<"Enter Book's Quantity : ";  cin>>book[Bcounter].quantity;
+   cout<<"Enter Book's ISBN number : ";  cin>>book[Bcounter].isbn;
+   cout<<"Enter Book's Edition  : ";  cin>>book[Bcounter].edition;
+   cout<<"Enter Book's Date of publication  : ";  cin>>book[Bcounter].date_of_pub.dd>>book[Bcounter].date_of_pub.mm>>book[Bcounter].date_of_pub.yy;
+
+
+   cout<<"Book added succesfully"<<endl;
+    Bcounter++;
+     int choice ;
+    cout<<"Do you want to Add another book 1(yes ) or 2(NO) "; cin>>choice;
+    cin.ignore();
+      // system ("cls");
+
+       if (choice==1)
+        goto addanother;
+
+else
+    Backoption('a');
+
+}
+
+
+
+void ModifyBookDetail(){
+
+          i=bookChecker();
+
+       // then display the existing details
+
+
+
+        cout<<"Enter the New book Details "<<endl;
+        cout<<"Enter book Title : ";    getline(cin,book[i].title);
+        cout<<"Enter Author's Name   : ";  getline(cin,book[i].author);
+        cout<<"Enter Shelf number : ";  getline(cin,book[i].shelf_no);
+        cout<<"Enter Book Id : ";   getline(cin,book[i].book_id);
+        cout<<"Enter Book category  : ";  getline(cin,book[i].catagory);
+        cout<<"Enter Book's Quantity : ";  cin>>book[i].quantity;
+        cout<<"Enter Book's ISBN number : ";  cin>>book[i].isbn;
+        cout<<"Enter Book's Edition  : ";  cin>>book[i].edition;
+        cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
+
+}
+
+
+
+
+
 
 
