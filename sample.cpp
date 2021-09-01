@@ -522,7 +522,54 @@ void ModifyBookDetail(){
         cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
 
 }
+// Function to check book is exist or not 
+int bookChecker()
+{
+string ID;
+if(Bcounter==0)
+cout<<setw(53)<<"No book has been added yet"<<endl;
+else{
+reenter:cout<<setw(53)<<"enter the book Id ";
+cin>>ID;
+cin.clear();
+cin.ignore(1000,'\n');
+for(int i=0;i<Bcounter;i++)
+{
+if(ID==book[i].book_id){
+return i;
+break;
+}
+else if(i==Bcounter-1){
+cout<<"The book has either been deleted or doesn't exist "<<endl;
+go to reenter;
+}
+}
+}
+}
+void deleteBook()
+{
+i=bookChecker();
+for(int j=i;j<Bcounter;j++){
+book[j].title=book[j].title;
+book[j].author =book[j+1].author ;
+book[j].shelf_no=book[j+1].shelf_no;
+book[j].book_id=book[j+1].book_id;
+book[j].category =book[j+1].book_id;
 
+book[j].quantity =book[j+1].quantity ;
+book[j].isbn=book[j+1].isbn;
+
+book[j].edition =book[j+1].edition ;
+
+book[j].date_of_pub.dd=book[j+1].date_of_pub.dd;
+book[j].date_of_pub.mm=book[j+1].date_of_pub.mm;
+book[j].date_of_pub.yy=book[j+1].date_of_pub.yy;
+if(j==Bcounter-2)
+break;
+
+}
+Bcounter--;
+}
 
 
 
