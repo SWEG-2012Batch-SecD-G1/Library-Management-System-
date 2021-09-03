@@ -52,7 +52,7 @@ void ModifyBookDetail();
 void display(int x[],int sizee);
 void sampleData();
 int i,Bcounter=5,j;//  temporary declaration
-int Ucounter;
+int Ucounter=5;
 
 //*************************************
 bool stop=false;
