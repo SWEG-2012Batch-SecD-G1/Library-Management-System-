@@ -84,9 +84,9 @@ void sampleData(){
 
 book[0]={"b100","c++","Mahri","A20","Programming",3,122,2,{2000,07,25},5,0,false};
 book[1]={"b101","Luxury life","Mahi Tz","A10","Self help",5,1224,2,{2015,07,25},5,0,false};
-book[2]={"b102","Tsom ","Mastewal","A20","Programming",8,4568,2,{2001,06,23},2,2,false};
+book[2]={"b102","Tsom ","Mastewal","A20","Religious",8,4568,2,{2001,06,23},2,2,false};
 book[3]={"b103","Java","Matiyas","A20","Fiction",6,7892,2,{2021,04,10},3,1,false};
-book[4]={"b104","sql","Matiyas","A20","Religious",1,45587,2,{2020,04,15},4.5,3,false};
+book[4]={"b104","sql","Matiyas","A20","Database",1,45587,2,{2020,04,15},4.5,3,false};
 
 //sample user
 user[0]={"Lebamlak","u100",20,{8040,"0942201994"},0};
