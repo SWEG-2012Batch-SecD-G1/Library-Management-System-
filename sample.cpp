@@ -595,19 +595,30 @@ cout<<setw(18)<<"publication date"<<char (186);/*11*/
 cout<<setw(15)<<"shelf_no"<<char (186)/*8*/<<setw(8)<<"edition"<<char(186)/*9*/<<setw(8)<<"isbn"<<char (186)/*10*/<< endl;
 
 for (int i=0;i<sizee;i++){
-cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*2*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*4*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*6*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*11*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*8*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*10*/cout << char(187) << endl;
+cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206);
+/*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*2*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*4*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*6*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(206);
+/*11*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*8*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*10*/cout << char(187) << endl;
 
-cout << char(206) <<setw(3)<<i+1<<"."<<char(206)  /*1*/ <<setw(8)<<book[x[i]].book_id<< char(206);/*2*/
-cout<<setw(15)<<book[x[i]].title<<char(206)/*3*/<<setw(15)<<book[x[i]].author<<char (206);/*4*/
-cout<<setw(15)<<book[x[i]].catagory<<char(206)/*5*/<<setw(8)<<book[x[i]].rate<<char (206);/*6*/
-cout<<setw(8)<<book[x[i]].quantity<<char(206);/*7*/
-cout<<setw(5)<<book[x[i]].date_of_pub.dd<<"-"<<setw(5)<<book[x[i]].date_of_pub.mm<<"-"<<setw(6)<<book[x[i]].date_of_pub.yy<<char (186);/*11*/
-cout<<setw(15)<<book[x[i]].shelf_no<<char (206)/*8*/<<setw(6)<<book[x[i]].edition<<"th"<<char(206)/*9*/<<setw(8)<<book[x[i]].isbn<<char (206)/*10*/<< endl;
+cout << char(206) <<setw(3)<<i+1<<"."<<char(206);
+/*1*/ <<setw(8)<<book[x[i]].book_id<< char(206);
+/*2*/cout<<setw(15)<<book[x[i]].title<<char(206);
+/*3*/<<setw(15)<<book[x[i]].author<<char (206);
+/*4*/cout<<setw(15)<<book[x[i]].catagory<<char(206);
+/*5*/<<setw(8)<<book[x[i]].rate<<char (206);
+/*6*/cout<<setw(8)<<book[x[i]].quantity<<char(206);
+/*7*/cout<<setw(5)<<book[x[i]].date_of_pub.dd<<"-"<<setw(5)<<book[x[i]].date_of_pub.mm<<"-"<<setw(6)<<book[x[i]].date_of_pub.yy<<char (186);
+/*11*/cout<<setw(15)<<book[x[i]].shelf_no<<char (206);
+/*8*/<<setw(6)<<book[x[i]].edition<<"th"<<char(206);
+/*9*/<<setw(8)<<book[x[i]].isbn<<char (206)/*10*/<< endl;
 
 
 
