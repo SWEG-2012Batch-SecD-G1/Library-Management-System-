@@ -3,10 +3,6 @@
 #include<stdlib.h>
 #include<string.h>
 #include<string>
-#include <cstdlib>
-#include <bits/stdc++.h>
-#include <windows.h>
-#include<conio.h>
 using namespace std;
 
 struct Date{
@@ -37,8 +33,12 @@ string name, user_id;
 int age;
 Address user_address;
 int num_issued_book;
+<<<<<<< HEAD
 Book issued_book; // we connect the two structs by creating the object of one struct in the other struct
 Date issue_date,return_date;
+=======
+Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
+>>>>>>> fb2dc4ab7b82ad137e758f75908581326701dfcf
 }user[1000];//array of structure for the user.
 
 
@@ -53,10 +53,13 @@ void search1 (char a);
 void list_by_catagory();
 void addbook();
 void ModifyBookDetail();
-void display(int x[],int sizee);
-void sampleData();
+void deleteBook();
+int bookChecker();
+void modifyMembersDetail();
+int userChecker();
+
 int i,Bcounter=5,j;//  temporary declaration
-int Ucounter=5;
+int Ucounter;
 
 //*************************************
 bool stop=false;
@@ -74,6 +77,7 @@ return 0;
 
 }
 
+<<<<<<< HEAD
 //This function creates sample data
 void sampleData(){
 //sample books
@@ -95,6 +99,8 @@ user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
 }
 
 
+=======
+>>>>>>> fb2dc4ab7b82ad137e758f75908581326701dfcf
 //This function is used to generate a welcome page
 void welcome(){
  system("cls");
@@ -552,7 +558,7 @@ void ModifyBookDetail(){
         cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
 
 }
-// Function to check book is exist or not
+// Function to check book is exist or not 
 int bookChecker()
 {
 string ID;
@@ -580,11 +586,11 @@ void deleteBook()
 {
 i=bookChecker();
 for(int j=i;j<Bcounter;j++){
-book[j].title=book[j].title;
+book[j].title=book[j+1].title;
 book[j].author =book[j+1].author ;
 book[j].shelf_no=book[j+1].shelf_no;
 book[j].book_id=book[j+1].book_id;
-book[j].category =book[j+1].book_id;
+book[j].category =book[j+1].category;
 
 book[j].quantity =book[j+1].quantity ;
 book[j].isbn=book[j+1].isbn;
@@ -600,32 +606,52 @@ break;
 }
 Bcounter--;
 }
-// function to display book information tabularly ***********************
-void display(int x[],int sizee){
-   system("cls");
+void modifyMemberDetail()
+{
+cout<<"Enter the New Detail for the member:"<<endl;
+cout<<"Enter the Name:";
+getline(cin,user[i].name);
+cout<<"Enter the ID:";
+getline(cin,user[i].user_id);
+cout<<"Enter the age:";
 
-cout << char(186) <<setw(4)<<"No"<<char(186)  /*1*/ <<setw(8)<<"book_id"<< char(186);/*2*/
-cout<<setw(15)<<"title"<<char(186)/*3*/<<setw(15)<<"author"<<char (186);/*4*/
-cout<<setw(15)<<"catagory"<<char(186)/*5*/<<setw(8)<<"rate"<<char (186);/*6*/
-cout<<setw(8)<<"quantity"<<char(186);/*7*/
-cout<<setw(18)<<"publication date"<<char (186);/*11*/
-cout<<setw(15)<<"shelf_no"<<char (186)/*8*/<<setw(8)<<"edition"<<char(186)/*9*/<<setw(8)<<"isbn"<<char (186)/*10*/<< endl;
+cin>>user[i].age);
+cout<<"Enter the house number:";
+cin>>user[i].user_address.house_no;
+cout<<"Enter the phone number:";
+cin>>user[i].user_address.phone;
 
-for (int i=0;i<sizee;i++){
-cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*2*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*4*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*6*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*11*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*8*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*10*/cout << char(187) << endl;
+}
+int userChecker()
+{
+string ID;
+if(Ucounter==0)
+cout<<setw(53)<<"No user has been added yet"<<endl;
+else
+{
+reenter:cout<<setw(53)<<"Enter member id:";
+cin>>ID;
+cin.clear();
+cin.ignore (1000,'\n');
+for(int i=0;i<Ucounter;i++)
+{
+if(ID==user[i].user_id){
+return i;
+break;
+}
+else if(i=Ucounter-1)
+{
+cout<<"The user is not found:"<<endl;
+goto reenter;
+}
+}
 
-cout << char(206) <<setw(3)<<i+1<<"."<<char(206)  /*1*/ <<setw(8)<<book[x[i]].book_id<< char(206);/*2*/
-cout<<setw(15)<<book[x[i]].title<<char(206)/*3*/<<setw(15)<<book[x[i]].author<<char (206);/*4*/
-cout<<setw(15)<<book[x[i]].catagory<<char(206)/*5*/<<setw(8)<<book[x[i]].rate<<char (206);/*6*/
-cout<<setw(8)<<book[x[i]].quantity<<char(206);/*7*/
-cout<<setw(5)<<book[x[i]].date_of_pub.dd<<"-"<<setw(5)<<book[x[i]].date_of_pub.mm<<"-"<<setw(6)<<book[x[i]].date_of_pub.yy<<char (186);/*11*/
-cout<<setw(15)<<book[x[i]].shelf_no<<char (206)/*8*/<<setw(6)<<book[x[i]].edition<<"th"<<char(206)/*9*/<<setw(8)<<book[x[i]].isbn<<char (206)/*10*/<< endl;
+}
 
+
+
+
+}
 
 
 
