@@ -41,9 +41,12 @@ Book issued_book[2];// the user can only borrow 2 books at the same time( this i
 >>>>>>> fb2dc4ab7b82ad137e758f75908581326701dfcf
 }user[1000];//array of structure for the user.
 
+<<<<<<< Updated upstream
 
 
 
+=======
+>>>>>>> Stashed changes
 //Declaration of Functions
 void welcome();
 void user_option();
@@ -65,9 +68,27 @@ int Ucounter;
 bool stop=false;
 
 int main(){
+<<<<<<< Updated upstream
 
 welcome();
 sampleData();
+=======
+
+ welcome();
+main_menu();
+do{
+
+switch(choose){
+	case 1:
+		admin_option();
+	break;
+	case 2:
+		user_option();
+	break;
+
+	 default :{
+	 	cout<<"You entered the wrong number. ";
+>>>>>>> Stashed changes
 
 while(!stop){
    main_menu();
@@ -76,6 +97,7 @@ while(!stop){
 return 0;
 
 }
+<<<<<<< Updated upstream
 
 <<<<<<< HEAD
 //This function creates sample data
@@ -94,6 +116,12 @@ user[1]={"Kidus","u101",50,{7030,"0911111111"},0};
 user[2]={"Ibsa Berhanu","u102",60,{4564,"0922222222"},0};
 user[3]={"Chere Lemma","u103",30,{1415,"0933333333"},0};
 user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
+=======
+
+}
+while(choose!=3);
+
+>>>>>>> Stashed changes
 
 
 }
@@ -655,4 +683,27 @@ goto reenter;
 
 
 
+
+//this function will search the availability of specific books in the library
+//(it searches using title of the book, author and book ISBN)
+
+void search1 (char a){
+int Num_search[Bcounter],counter=0;
+switch (a){
+case 'a':{cin.ignore();
+system ("cls");
+cout<<"\n\n\n"<<"           "<<"Please insert the title of the book"<<endl;
+string searchName,temp_title;
+getline (cin, searchName);
+ transform (searchName.begin(),searchName.end(),searchName.begin(),:: tolower);
+for (int i=0;i<Bcounter;i++){
+    temp_title=book[i].title;
+transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
+        if (temp_title==searchName){
+      Num_search[counter]=i;
+      counter++;
+            }
+        }
+    }
+}
 
