@@ -31,14 +31,18 @@ int read_freq;
 bool issued;
 }book[1000];
 
-//to recored any library users information / or to recored library member informaion.
+//to recored any library users information / or to recored library member information.
 struct User{
 string name, user_id;
 int age;
 Address user_address;
 int num_issued_book;
-Date issue_date,return_date;// the user can only borrow 2 books at the same time( this is why it is array).
+Book issued_book; // we connect the two structs by creating the object of one struct in the other struct
+Date issue_date,return_date;
 }user[1000];//array of structure for the user.
+
+
+
 
 //Declaration of Functions
 void welcome();
@@ -89,6 +93,7 @@ user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
 
 
 }
+
 
 //This function is used to generate a welcome page
 void welcome(){
