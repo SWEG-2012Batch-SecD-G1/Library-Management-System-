@@ -3,6 +3,10 @@
 #include<stdlib.h>
 #include<string.h>
 #include<string>
+#include <cstdlib>
+#include <bits/stdc++.h>
+#include <windows.h>
+#include<conio.h>
 using namespace std;
 
 struct Date{
@@ -33,7 +37,7 @@ string name, user_id;
 int age;
 Address user_address;
 int num_issued_book;
-Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
+Date issue_date,return_date;// the user can only borrow 2 books at the same time( this is why it is array).
 }user[1000];//array of structure for the user.
 
 //Declaration of Functions
@@ -46,7 +50,7 @@ void list_by_catagory();
 void addbook();
 void ModifyBookDetail();
 void display(int x[],int sizee);
-
+void sampleData();
 int i,Bcounter=5,j;//  temporary declaration
 int Ucounter;
 
@@ -63,6 +67,26 @@ while(!stop){
 }
 
 return 0;
+
+}
+
+//This function creates sample data
+void sampleData(){
+//sample books
+
+book[0]={"b100","c++","Mahri","A20","Programming",3,122,2,{2000,07,25},5,0,false};
+book[1]={"b101","Luxury life","Mahi Tz","A10","Self help",5,1224,2,{2015,07,25},5,0,false};
+book[2]={"b102","Tsom ","Mastewal","A20","Programming",8,4568,2,{2001,06,23},2,2,false};
+book[3]={"b103","Java","Matiyas","A20","Fiction",6,7892,2,{2021,04,10},3,1,false};
+book[4]={"b104","sql","Matiyas","A20","Religious",1,45587,2,{2020,04,15},4.5,3,false};
+
+//sample user
+user[0]={"Lebamlak","u100",20,{8040,"0942201994"},0};
+user[1]={"Kidus","u101",50,{7030,"0911111111"},0};
+user[2]={"Ibsa Berhanu","u102",60,{4564,"0922222222"},0};
+user[3]={"Chere Lemma","u103",30,{1415,"0933333333"},0};
+user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
+
 
 }
 
