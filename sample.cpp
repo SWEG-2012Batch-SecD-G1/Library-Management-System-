@@ -769,3 +769,27 @@ for(int i=0; i<8; i++){cout << char(205);}cout << char(186); /*9*/for(int i=0; i
 }
 
 }
+
+//function to display user information
+
+void display1(int x[],int sizee){
+    cout <<"\n\n\n"<<endl;cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(203); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*2*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*4*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*5*/
+for(int i=0; i<18; i++){cout << char(205);}cout << char(203); /*11*/
+for(int i=0; i<18; i++){cout << char(205);}cout << char(203); /*8*/
+cout << char(187) << endl;
+
+cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*2*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*4*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*5*/
+for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*11*/
+for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*8*/
+cout << char(187) << endl;
+
+cout << char(200);  for(int i=0; i<4; i++){cout << char(205);}cout << char(202); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(202); /*2*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*4*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*5*/
+for(int i=0; i<18; i++){cout << char(205);}cout << char(186); /*11*/
+for(int i=0; i<18; i++){cout << char(205);}cout << char(186); /*8*/
+cout << char(188) << endl<<endl;;
