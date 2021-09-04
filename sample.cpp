@@ -3,7 +3,6 @@
 #include<stdlib.h>
 #include<string.h>
 #include<string>
-void display(int x[],int sizee);
 using namespace std;
 
 struct Date{
@@ -36,8 +35,7 @@ Address user_address;
 int num_issued_book;
 Book issued_book; // we connect the two structs by creating the object of one struct in the other struct
 Date issue_date,return_date;
-//=======
-//Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
+Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
 }user[1000];//array of structure for the user.
 
 
@@ -54,6 +52,9 @@ void deleteBook();
 int bookChecker();
 void modifyMembersDetail();
 int userChecker();
+void display(int x[],int sizee);
+void display1(int x[],int sizee);
+void display2(int x[],int sizee);
 
 int i,Bcounter=5,j;//  temporary declaration
 int Ucounter;
@@ -90,9 +91,7 @@ while(!stop){
 return 0;
 
 }
-<<<<<<< Updated upstream
 
-<<<<<<< HEAD
 //This function creates sample data
 void sampleData(){
 //sample books
@@ -109,19 +108,17 @@ user[1]={"Kidus","u101",50,{7030,"0911111111"},0};
 user[2]={"Ibsa Berhanu","u102",60,{4564,"0922222222"},0};
 user[3]={"Chere Lemma","u103",30,{1415,"0933333333"},0};
 user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
-=======
+
 
 }
 while(choose!=3);
 
->>>>>>> Stashed changes
+
 
 
 }
 
 
-=======
->>>>>>> fb2dc4ab7b82ad137e758f75908581326701dfcf
 //This function is used to generate a welcome page
 void welcome(){
  system("cls");
@@ -819,4 +816,9 @@ cout << char(188) << endl<<endl;;
 
 }
     Backoption('a');
+}
+//function to show issued book information.
+void display2(int x[],int sizee){
+
+
 }
