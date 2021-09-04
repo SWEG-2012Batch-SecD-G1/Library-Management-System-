@@ -773,13 +773,24 @@ for(int i=0; i<8; i++){cout << char(205);}cout << char(186); /*9*/for(int i=0; i
 //function to display user information
 
 void display1(int x[],int sizee){
-    cout <<"\n\n\n"<<endl;cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(203); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*2*/
+system("cls");
+cout <<"\n\n\n"<<endl;cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(203); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*2*/
 for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*4*/
 for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*5*/
 for(int i=0; i<18; i++){cout << char(205);}cout << char(203); /*11*/
 for(int i=0; i<18; i++){cout << char(205);}cout << char(203); /*8*/
 cout << char(187) << endl;
 
+cout << char(186) <<setw(4)<<"No"<<char(186)  /*1*/ <<setw(8)<<"book_id"<< char(186);/*2*/
+cout<<setw(15)<<"Title"<<char(186)/*3*/<<setw(15)<<"user id"<<char (186);/*4*/
+cout<<setw(15)<<"Borrower"<<char(186);/*5*/
+cout<<setw(18)<<"Issued date"<<char (186);/*11*/
+cout<<setw(18)<<"Return date"<<char (186);/*8*/
+cout<< endl;
+
+
+
+for (int i=0;i<sizee;i++){
 cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*2*/
 for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*4*/
 for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*5*/
@@ -787,9 +798,25 @@ for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*11*/
 for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*8*/
 cout << char(187) << endl;
 
+
+
+cout << char(206) <<setw(3)<<i+1<<"."<<char(206)  /*1*/ <<setw(8)<<user[x[i]].issued_book.book_id<< char(206);/*2*/
+cout<<setw(15)<<user[x[i]].issued_book.title<<char(206)/*3*/<<setw(15)<<user[x[i]].user_id<<char (206);/*4*/
+cout<<setw(15)<<user[x[i]].name<<char(206);/*5*/
+cout<<setw(5)<<user[x[i]].issue_date.dd<<"-"<<setw(5)<<user[x[i]].issue_date.mm<<"-"<<setw(6)<<user[x[i]].issue_date.yy<<char (186);/*11*/
+if(user[i].issue_date.dd+5-30>0){
+    cout<<setw(5)<<user[i].issue_date.dd+5-30<<"-"<<setw(5)<<user[i].issue_date.mm+1<<"-"<<setw(6)<<user[i].issue_date.yy<<char (186)<<endl;/*8*/
+}
+else{
+ cout<<setw(5)<<user[i].issue_date.dd+5<<"-"<<setw(5)<<user[i].issue_date.mm<<"-"<<setw(6)<<user[i].issue_date.yy<<endl;
+}
 cout << char(200);  for(int i=0; i<4; i++){cout << char(205);}cout << char(202); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(202); /*2*/
 for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*4*/
 for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*5*/
 for(int i=0; i<18; i++){cout << char(205);}cout << char(186); /*11*/
 for(int i=0; i<18; i++){cout << char(205);}cout << char(186); /*8*/
 cout << char(188) << endl<<endl;;
+
+}
+    Backoption('a');
+}
