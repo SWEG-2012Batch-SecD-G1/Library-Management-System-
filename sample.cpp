@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<string>
+void display(int x[],int sizee);
 using namespace std;
 
 struct Date{
@@ -33,20 +34,13 @@ string name, user_id;
 int age;
 Address user_address;
 int num_issued_book;
-<<<<<<< HEAD
 Book issued_book; // we connect the two structs by creating the object of one struct in the other struct
 Date issue_date,return_date;
-=======
-Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
->>>>>>> fb2dc4ab7b82ad137e758f75908581326701dfcf
+//=======
+//Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
 }user[1000];//array of structure for the user.
 
-<<<<<<< Updated upstream
 
-
-
-=======
->>>>>>> Stashed changes
 //Declaration of Functions
 void welcome();
 void user_option();
@@ -68,11 +62,10 @@ int Ucounter;
 bool stop=false;
 
 int main(){
-<<<<<<< Updated upstream
+
 
 welcome();
 sampleData();
-=======
 
  welcome();
 main_menu();
@@ -586,7 +579,7 @@ void ModifyBookDetail(){
         cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
 
 }
-// Function to check book is exist or not 
+// Function to check book is exist or not
 int bookChecker()
 {
 string ID;
@@ -707,3 +700,72 @@ transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
     }
 }
 
+
+// function to display book information tabularly ***********************
+void display(int x[],int sizee){
+   system("cls");
+cout <<"\n\n\n"<<endl;cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(203); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*2*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*4*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*6*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(203); /*11*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*8*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*10*/cout << char(187) << endl;
+
+cout << char(186) <<setw(4)<<"No"<<char(186);
+ /*1*/ cout<<setw(8)<<"book_id"<< char(186);
+ /*2*/cout<<setw(15)<<"title"<<char(186);
+ /*3*/<<setw(15)<<"author"<<char (186);
+ /*4*/cout<<setw(15)<<"catagory"<<char(186);
+ /*5*/cout<<setw(8)<<"rate"<<char (186);
+ /*6*/cout<<setw(8)<<"quantity"<<char(186);
+ /*7*/cout<<setw(18)<<"publication date"<<char (186);
+ /*11*/cout<<setw(15)<<"shelf_no"<<char (186);
+ /*8*/cout<<setw(8)<<"edition"<<char(186);
+ /*9*/cout<<setw(8)<<"isbn"<<char (186);
+ /*10*/cout<< endl;
+
+cout << char(200);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*2*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*4*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*6*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*11*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*8*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206) /*10*/<< char(188)<<endl;
+
+for (int i=0;i<sizee;i++){
+cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206);
+/*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206);  /*2*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*4*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*6*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(206);
+/*11*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*8*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*10*/cout << char(187) << endl;
+
+cout << char(206) <<setw(3)<<i+1<<"."<<char(206);
+/*1*/cout <<setw(8)<<book[x[i]].book_id<< char(206);
+/*2*/cout<<setw(15)<<book[x[i]].title<<char(206);
+/*3*/cout<<setw(15)<<book[x[i]].author<<char (206);
+/*4*/cout<<setw(15)<<book[x[i]].catagory<<char(206);
+/*5*/cout<<setw(8)<<book[x[i]].rate<<char (206);
+/*6*/cout<<setw(8)<<book[x[i]].quantity<<char(206);
+/*7*/cout<<setw(5)<<book[x[i]].date_of_pub.dd<<"-"<<setw(5)<<book[x[i]].date_of_pub.mm<<"-"<<setw(6)<<book[x[i]].date_of_pub.yy<<char (186);
+/*11*/cout<<setw(15)<<book[x[i]].shelf_no<<char (206);
+/*8*/cout<<setw(6)<<book[x[i]].edition<<"th"<<char(206);
+/*9*/cout<<setw(8)<<book[x[i]].isbn<<char (206);
+/*10*/cout<< endl
+
+cout << char(200);  for(int i=0; i<4; i++){cout << char(205);}cout << char(202); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(202); /*2*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*4*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(186); /*6*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(186); /*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(186); /*11*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(186); /*8*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(186); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(186); /*10*/cout << char(188) << endl<<endl;;
+
+
+
+}
+
+}
