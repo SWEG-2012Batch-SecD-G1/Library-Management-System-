@@ -197,6 +197,23 @@ void user_option(){
         cout << setw(15)<< char(176)<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
         cout << setw(15)<< char(176);cout << setw(20)<< char(176)<<"i, Back to Main Menu"<<endl;
+	cin.clear();
+ cin.ignore(1000,'\n');
+        cin>>choice;
+
+          char b=choice;
+        if('a'==b || b=='b'||b=='c'){
+            search1(b,'u');
+
+         }
+        else if(b=='d'||b=='e'||b=='f'||b=='g' ||b=='h'){
+            listbook(b);}
+
+else if(b=='i')
+    main_menu();
+
+
+}
   
 //This is a function that shows the admin right or we can say privilage 	
 
