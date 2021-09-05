@@ -45,9 +45,11 @@ void welcome();
 void main_menu();
 void user_option();
 void admin_option ();
+
 //************************************************
 
 void search1 (char a);
+void all_books(char p);
 void list_by_catagory();
 void addbook();
 void ModifyBookDetail();
