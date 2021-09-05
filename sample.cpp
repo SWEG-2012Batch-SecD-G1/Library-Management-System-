@@ -69,7 +69,7 @@ void display2(int x[],int sizee);
 //*******************************************
 
 int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
-int Ucounter=5;
+int Ucounter=5;// u standes for user and B stands for book 
 
 //*************************************
 bool stop=false;
