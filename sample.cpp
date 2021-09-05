@@ -180,32 +180,7 @@ system ("cls");
 //This function lists the services that the user will get in the library
 void user_option(){
 	
-   switch(choice)
-{
-   case a: Clrscr();
-           Title ();
-           break;
- case b:Author ();
-       break;
-case c:ISBN();
-       break;
-case d: category();
-       break;
- case e:Most read();
-        break;
-case f:Rating();
-      break;
-case g:Recent book();
-       break;
-case h:All book();
-      break;
-case i:return;
-default:{
-cout<<"you enterd inappropriate character.please try again!!"}
-
-}
-        return choice;
-}
+  
 //This is a function that shows the admin right or we can say privilage 	
 
 void admin_option (){
