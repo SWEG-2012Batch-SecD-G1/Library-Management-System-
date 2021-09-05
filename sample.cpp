@@ -225,6 +225,13 @@ cout<<"you enterd inappropriate character.please try again!!"}
 }
         return choice;
 }
+//This is a function that shows the admin right or we can say privilage 	
+void admin_option (){
+    system ("cls");
+system ("color 04");
+        int choice;	
+	
+	
  // This is a function to register multiple members at once
 void memberRegistration(){
 
