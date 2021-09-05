@@ -309,6 +309,11 @@ search_specific_user();
 case 13:
 all_users();
     break;
+case 14:
+	break;
+case 15:
+ main_menu();
+    break;
 			
 	
  // This is a function to register multiple members at once
