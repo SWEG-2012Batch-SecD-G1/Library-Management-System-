@@ -44,6 +44,7 @@ Book issued_book[2];// the user can only borrow 2 books at the same time( this i
 void welcome();
 void main_menu();
 void user_option();
+void admin_option ();
 //************************************************
 
 void search1 (char a);
