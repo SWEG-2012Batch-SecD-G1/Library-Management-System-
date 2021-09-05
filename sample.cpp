@@ -42,17 +42,20 @@ Book issued_book[2];// the user can only borrow 2 books at the same time( this i
 
 //Declaration of Functions
 void welcome();
-void user_option();
 void main_menu();
+void user_option();
+//************************************************
 void memberRegistration();
 void search1 (char a);
 void list_by_catagory();
 void addbook();
 void ModifyBookDetail();
 void deleteBook();
+
 int bookChecker();
 void modifyMembersDetail();
 int userChecker();
+//************************************************
 void display(int x[],int sizee);
 void display1(int x[],int sizee);
 void display2(int x[],int sizee);
