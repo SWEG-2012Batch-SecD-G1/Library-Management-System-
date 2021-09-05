@@ -3,6 +3,10 @@
 #include<stdlib.h>
 #include<string.h>
 #include<string>
+#include <cstdlib>
+#include <bits/stdc++.h>
+#include <windows.h>
+#include<conio.h>
 using namespace std;
 
 struct Date{
