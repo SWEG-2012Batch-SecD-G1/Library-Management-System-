@@ -45,14 +45,16 @@ void welcome();
 void main_menu();
 void user_option();
 //************************************************
-void memberRegistration();
+
 void search1 (char a);
 void list_by_catagory();
 void addbook();
 void ModifyBookDetail();
-void deleteBook();
-
 int bookChecker();
+void deleteBook();
+//***********************************************
+
+void memberRegistration();
 void modifyMembersDetail();
 int userChecker();
 //************************************************
