@@ -58,6 +58,7 @@ void deleteBook();
 //***********************************************
 
 void memberRegistration();
+void deleteMember();
 void modifyMembersDetail();
 void all_users();
 int userChecker();
@@ -337,6 +338,22 @@ void memberRegistration(){
 
 
 }
+	// tis function deletes a library member when the member asks or in other cases 
+void deleteMember(){
+      i=UserChecker();
+       for(int j=i; j<Ucounter;j++){  // this loop is to move the accounts forward
+             user[j].name=user[j+1].name;
+             user[j].user_id=user[j+1].user_id;
+             user[j].age=user[j+1].age;
+             user[j].user_address.house_no=user[j+1].user_address.house_no;
+             user[j].user_address.phone=user[j+1].user_address.phone;
+       if(j==Ucounter-2)
+                break;
+
+           }
+          Ucounter--;
+}
+
 void search1 (char a){
 int Num_search[Bcounter],counter=0;
 switch (a){
