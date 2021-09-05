@@ -57,6 +57,7 @@ void deleteBook();
 
 void memberRegistration();
 void modifyMembersDetail();
+void all_users();
 int userChecker();
 //************************************************
 void display(int x[],int sizee);
