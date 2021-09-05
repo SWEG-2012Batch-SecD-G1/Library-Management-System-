@@ -268,6 +268,48 @@ system ("color 04");
     SetConsoleTextAttribute(v,7);
 cin.clear();
  cin.ignore(1000,'\n');
+	switch(choice){
+case 1:
+isueOrReturnbook('i');
+    break;
+case 2:
+isueOrReturnbook('r');
+    break;
+case 3:
+addbook();
+    break;
+case 4:
+ModifyBookDetail();
+    break;
+case 5:
+deleteBook();
+    break;
+case 6:
+search1('a','a');
+    break;
+case 7:
+all_books('a');
+    break;
+case 8:
+unreturned_books();
+    break;
+case 9:
+memberRegistration();
+    break;
+
+case 10:
+ModifyMemberDetail();
+    break;
+case 11:
+deleteMember();
+    break;
+case 12:
+search_specific_user();
+    break;
+case 13:
+all_users();
+    break;
+			
 	
  // This is a function to register multiple members at once
 void memberRegistration(){
