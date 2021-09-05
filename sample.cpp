@@ -33,7 +33,7 @@ string name, user_id;
 int age;
 Address user_address;
 int num_issued_book;
-Book issued_book; // we connect the two structs by creating the object of one struct in the other struct
+//Book issued_book; // we connect the two structs by creating the object of one struct in the other struct
 Date issue_date,return_date;
 Book issued_book[2];// the user can only borrow 2 books at the same time( this is why it is array).
 }user[1000];//array of structure for the user.
@@ -55,6 +55,7 @@ int userChecker();
 void display(int x[],int sizee);
 void display1(int x[],int sizee);
 void display2(int x[],int sizee);
+void unreturned_books();
 
 int i,Bcounter=5,j;//  temporary declaration
 int Ucounter;
@@ -859,4 +860,17 @@ cout << char(188) << endl<<endl;;
 
 }
     Backoption('a');
+}
+
+void unreturned_books(){
+
+int unreturned[Ucounter],counter=0;
+for (int i=0;i<Ucounter;i++){
+        if (user[i].issued_book.issued==true){
+      unreturned[counter]=i;
+      counter++;
+    }
+}
+display1(unreturned,counter);
+
 }
