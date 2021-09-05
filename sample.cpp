@@ -123,8 +123,6 @@ user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
 while(choose!=3);
 
 
-
-
 }
 
 
@@ -669,6 +667,7 @@ void ModifyBookDetail(){
         cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
 
 }
+	
 // Function to check book is exist or not
 int bookChecker()
 {
@@ -760,15 +759,12 @@ goto reenter;
 }
 
 
-
-
 }
 
 
-
-
 //this function will search the availability of specific books in the library
-//(it searches using title of the book, author and book ISBN)
+
+	//(it searches using title of the book, author and book ISBN)
 
 void search1 (char a){
 int Num_search[Bcounter],counter=0;
