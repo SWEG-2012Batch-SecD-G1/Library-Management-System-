@@ -264,6 +264,10 @@ system ("color 04");
     cout << char(176)<< endl;
     cout << setw(40)<< char(176);system ("cls");
     cout << setw(91)<< char(176);
+	HANDLE v= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(v,7);
+cin.clear();
+ cin.ignore(1000,'\n');
 	
  // This is a function to register multiple members at once
 void memberRegistration(){
