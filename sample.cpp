@@ -40,7 +40,7 @@ Book issued_book[2];// the user can only borrow 2 books at the same time( this i
 }user[1000];//array of structure for the user.
 
 
-//Declaration of Functions
+                //Declaration of Functions
 void welcome();
 void main_menu();
 void user_option();
