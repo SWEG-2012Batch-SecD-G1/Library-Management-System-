@@ -1010,12 +1010,37 @@ display1(unreturned,counter);
 	
 	
 void decreaseCatg(int i,int ){
+	
+	
 		
 		
 		
 		
 	}
 void increaseCatg(int ,int ){
+
+ // the below statement increases quantity of books in each catagory;
+
+    if(book[Bcounter].catagory=="Fiction")
+         Fiction+=x;
+        else if(book[Bcounter].catagory=="Science")
+            Science+=x;
+        else if(book[Bcounter].catagory=="Art")
+               Art+=x;
+        else if(book[Bcounter].catagory=="Self help")
+              Self_help+=x;
+        else if(book[Bcounter].catagory=="Religious")
+             Religious+=x;
+        else if(book[Bcounter].catagory=="Social science")
+            Social_science+=x;
+        else if(book[Bcounter].catagory=="Amharic")
+             Amharic+=x;
+        else if(book[Bcounter].catagory=="Research book")
+              Research_book+=x;
+        else if(book[Bcounter].catagory=="Programming")
+                Programing+=x;
+        else
+             other+=x;
 
 
 
