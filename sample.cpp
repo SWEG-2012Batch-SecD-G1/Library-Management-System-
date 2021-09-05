@@ -179,7 +179,24 @@ system ("cls");
 }
 //This function lists the services that the user will get in the library
 void user_option(){
-	
+	system ("cls");
+ char choice;
+       cout <<"\n\n\n\n"<<endl;
+        cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
+        cout << setw(15)<< char(176)<<"search books by"<<endl;
+        cout << setw(20)<< char(176)<<"a, Title"<<endl;
+        cout << setw(20)<< char(176)<<"b, Author"<<endl;
+        cout << setw(20)<< char(176)<<"c, ISBN"<<endl;
+        cout << setw(15)<< char(176)<<"List books by"<<endl;
+        cout << setw(20)<< char(176)<<"d, category"<<endl;
+        cout << setw(20)<< char(176)<<"e, Most read"<<endl;
+        cout << setw(20)<< char(176)<<"f, Rating "<<endl;
+         cout << setw(20)<< char(176)<<"g, Recent books"<<endl;
+          cout << setw(20)<< char(176)<<"h, All books"<<endl;
+        cout << setw(15)<< char(176)<<endl;
+        cout << setw(15)<< char(176)<<endl;
+        cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
+        cout << setw(15)<< char(176);cout << setw(20)<< char(176)<<"i, Back to Main Menu"<<endl;
   
 //This is a function that shows the admin right or we can say privilage 	
 
