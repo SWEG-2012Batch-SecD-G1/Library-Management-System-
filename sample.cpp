@@ -618,6 +618,17 @@ void all_books(char p){
 }
 	
 //this function lista users used/visited the library
+void all_users(){
+	
+int Num_search[Ucounter];
+	
+    for (int i=0;i<Ucounter;i++){
+        Num_search[i]=i;
+    }
+
+    display2(Num_search,Ucounter);
+
+}
 	
 	
 //This is a function to add books to the library
