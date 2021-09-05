@@ -601,6 +601,7 @@ Backoption('u');
 
 
   //this function  lists all the books that  currently exist in a library
+	
 void all_books(char p){
     int Num_search[Bcounter],count;
     for (int i=0;i<Bcounter;i++){
@@ -906,6 +907,7 @@ cout << char(188) << endl<<endl;;
 }
     Backoption('a');
 }
+	
 //function to show issued book information.
 void display2(int x[],int sizee){
    system("cls");
