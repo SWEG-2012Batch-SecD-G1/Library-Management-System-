@@ -235,6 +235,9 @@ system ("color 04");
     cout << setw(40)<< char(176);
     for(int i=0; i<90; i++){cout << char(205);}
     cout << char(176)<< endl;
+	 system ("color F");
+    cout << setw(40)<< char(176);
+    cout <<setw(55)<<"Administrator option ?"<< setw(61)<< char(176)<<endl;
 	
  // This is a function to register multiple members at once
 void memberRegistration(){
