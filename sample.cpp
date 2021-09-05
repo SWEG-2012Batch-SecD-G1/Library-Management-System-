@@ -238,6 +238,32 @@ system ("color 04");
 	 system ("color F");
     cout << setw(40)<< char(176);
     cout <<setw(55)<<"Administrator option ?"<< setw(61)<< char(176)<<endl;
+	HANDLE u= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(u,2);
+     cout << setw(40)<< char(176)<<setw(20)<<""<<"Books"<<endl;
+    cout << setw(40)<< char(176)<<setw(5)<<"1, "<<"Book issue"<<endl;
+    cout << setw(40)<< char(176)<<setw(5)<<"2,"<<"Book deposit"<<endl;
+     cout << setw(40)<< char(176)<<setw(5)<<"3,"<<"Add book"<<endl;;
+      cout << setw(40)<< char(176)<<setw(5)<<"4,"<<"Modify book"<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"5,"<<"Delete Book"<<endl;
+        cout << setw(40)<< char(176)<<setw(5)<<"6,"<<"Search specific book"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"7,"<<"Display all books"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"8,"<<"Display unreturned books"<<endl;
+       cout << setw(40)<< char(176)<<setw(20)<<"User "<<endl;;
+       cout << setw(40)<< char(176)<<setw(5)<<"9,"<<"Add user record"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"10,"<<"Modify user record"<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"11,"<<"Delete user record"<<endl;
+        cout << setw(40)<< char(176)<<setw(5)<<"12,"<<"Search specific user record"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"13,"<<"Display all user record"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"14,"<<"Statics "<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"15,"<<"Back to Main Menu "<<endl;
+        cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
+        cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
+        cout << setw(40)<< char(176)<<setw(30)<<" "<<"please your choice--> "; cin >>choice;
+    cout << setw(40)<< char(176);for(int i=0; i<90; i++){cout << char(205);}
+    cout << char(176)<< endl;
+    cout << setw(40)<< char(176);system ("cls");
+    cout << setw(91)<< char(176);
 	
  // This is a function to register multiple members at once
 void memberRegistration(){
