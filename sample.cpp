@@ -74,6 +74,12 @@ int i,Bcounter=5,j;// it is a temporary declaration for the time being to show h
 int Ucounter=5;// u standes for user and B stands for book 
 
 //*************************************
+
+void decreaseCatg(int i,int );
+void increaseCatg(int ,int );
+
+
+//**************************************
 bool stop=false;
 
 int main(){
@@ -999,5 +1005,20 @@ for (int i=0;i<Ucounter;i++){
     }
 }
 display1(unreturned,counter);
+
+}
+	
+	
+void decreaseCatg(int i,int ){
+		
+		
+		
+		
+	}
+void increaseCatg(int ,int ){
+
+
+
+
 
 }
