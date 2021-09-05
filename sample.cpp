@@ -57,8 +57,10 @@ void display(int x[],int sizee);
 void display1(int x[],int sizee);
 void display2(int x[],int sizee);
 
-int i,Bcounter=5,j;//  temporary declaration
-int Ucounter;
+//*******************************************
+
+int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
+int Ucounter=5;
 
 //*************************************
 bool stop=false;
