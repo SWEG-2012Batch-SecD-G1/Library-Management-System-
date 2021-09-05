@@ -2,7 +2,8 @@
 #include<iomanip>
 #include<stdlib.h>
 #include<string.h>
-#include<string>
+#include <windows.h>
+#include<conio.h>
 using namespace std;
 
 struct Date{
@@ -39,26 +40,37 @@ Book issued_book[2];// the user can only borrow 2 books at the same time( this i
 }user[1000];//array of structure for the user.
 
 
-//Declaration of Functions
+                //Declaration of Functions
 void welcome();
-void user_option();
 void main_menu();
-void memberRegistration();
+void user_option();
+void admin_option ();
+
+//************************************************
+
 void search1 (char a);
+void all_books(char p);
 void list_by_catagory();
 void addbook();
 void ModifyBookDetail();
-void deleteBook();
 int bookChecker();
+void deleteBook();
+//***********************************************
+
+void memberRegistration();
 void modifyMembersDetail();
+void all_users();
 int userChecker();
+//************************************************
 void display(int x[],int sizee);
 void display1(int x[],int sizee);
 void display2(int x[],int sizee);
 void unreturned_books();
 
-int i,Bcounter=5,j;//  temporary declaration
-int Ucounter;
+//*******************************************
+
+int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
+int Ucounter=5;// u standes for user and B stands for book 
 
 //*************************************
 bool stop=false;
@@ -115,8 +127,6 @@ user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
 while(choose!=3);
 
 
-
-
 }
 
 
@@ -170,53 +180,138 @@ system ("cls");
 
 }
 //This function lists the services that the user will get in the library
-char user_option(){
-
-Clrscr();
-
+void user_option(){
+	system ("cls");
  char choice;
        cout <<"\n\n\n\n"<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
         cout << setw(15)<< char(176)<<"search books by"<<endl;
-        cout << setw(20)<< char(176)<<"a: Title"<<endl;
-        cout << setw(20)<< char(176)<<"b: Author"<<endl;
-        cout << setw(20)<< char(176)<<"c: ISBN"<<endl;
+        cout << setw(20)<< char(176)<<"a, Title"<<endl;
+        cout << setw(20)<< char(176)<<"b, Author"<<endl;
+        cout << setw(20)<< char(176)<<"c, ISBN"<<endl;
         cout << setw(15)<< char(176)<<"List books by"<<endl;
-        cout << setw(20)<< char(176)<<"d: category"<<endl;
-        cout << setw(20)<< char(176)<<"e: Most read"<<endl;
-        cout << setw(20)<< char(176)<<"f: Rating "<<endl;
-         cout << setw(20)<< char(176)<<"g: Recent books"<<endl;
-          cout << setw(20)<< char(176)<<"h: All books"<<endl;
-         cout<<setw(20)<<char(176)<<"i: back to menu"<<endl;
+        cout << setw(20)<< char(176)<<"d, category"<<endl;
+        cout << setw(20)<< char(176)<<"e, Most read"<<endl;
+        cout << setw(20)<< char(176)<<"f, Rating "<<endl;
+         cout << setw(20)<< char(176)<<"g, Recent books"<<endl;
+          cout << setw(20)<< char(176)<<"h, All books"<<endl;
+        cout << setw(15)<< char(176)<<endl;
         cout << setw(15)<< char(176)<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
+        cout << setw(15)<< char(176);cout << setw(20)<< char(176)<<"i, Back to Main Menu"<<endl;
+	cin.clear();
+ cin.ignore(1000,'\n');
         cin>>choice;
-   switch(choice)
-{
-   case a: Clrscr();
-           Title ();
-           break;
- case b:Author ();
-       break;
-case c:ISBN();
-       break;
-case d: category();
-       break;
- case e:Most read();
-        break;
-case f:Rating();
-      break;
-case g:Recent book();
-       break;
-case h:All book();
-      break;
-case i:return;
-default:{
-cout<<"you enterd inappropriate character.please try again!!"}
+
+          char b=choice;
+        if('a'==b || b=='b'||b=='c'){
+            search1(b,'u');
+
+         }
+        else if(b=='d'||b=='e'||b=='f'||b=='g' ||b=='h'){
+            listbook(b);}
+
+else if(b=='i')
+    main_menu();
+
 
 }
-        return choice;
+  
+//This is a function that shows the admin right or we can say privilage 	
+
+void admin_option (){
+    system ("cls");
+system ("color 04");
+        int choice;	
+	cout <<"\n\n\n\n\n\n\n\n\n\n"<<endl;
+    cout << setw(40)<< char(176);
+    for(int i=0; i<90; i++){cout << char(205);}
+    cout << char(176)<< endl;
+	 system ("color F");
+    cout << setw(40)<< char(176);
+    cout <<setw(55)<<"Administrator option ?"<< setw(61)<< char(176)<<endl;
+	HANDLE u= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(u,2);
+     cout << setw(40)<< char(176)<<setw(20)<<""<<"Books"<<endl;
+    cout << setw(40)<< char(176)<<setw(5)<<"1, "<<"Book issue"<<endl;
+    cout << setw(40)<< char(176)<<setw(5)<<"2,"<<"Book deposit"<<endl;
+     cout << setw(40)<< char(176)<<setw(5)<<"3,"<<"Add book"<<endl;;
+      cout << setw(40)<< char(176)<<setw(5)<<"4,"<<"Modify book"<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"5,"<<"Delete Book"<<endl;
+        cout << setw(40)<< char(176)<<setw(5)<<"6,"<<"Search specific book"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"7,"<<"Display all books"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"8,"<<"Display unreturned books"<<endl;
+       cout << setw(40)<< char(176)<<setw(20)<<"User "<<endl;;
+       cout << setw(40)<< char(176)<<setw(5)<<"9,"<<"Add user record"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"10,"<<"Modify user record"<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"11,"<<"Delete user record"<<endl;
+        cout << setw(40)<< char(176)<<setw(5)<<"12,"<<"Search specific user record"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"13,"<<"Display all user record"<<endl;
+      cout << setw(40)<< char(176)<<setw(5)<<"14,"<<"Statics "<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"15,"<<"Back to Main Menu "<<endl;
+        cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
+        cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
+        cout << setw(40)<< char(176)<<setw(30)<<" "<<"please your choice--> "; cin >>choice;
+    cout << setw(40)<< char(176);for(int i=0; i<90; i++){cout << char(205);}
+    cout << char(176)<< endl;
+    cout << setw(40)<< char(176);system ("cls");
+    cout << setw(91)<< char(176);
+	HANDLE v= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(v,7);
+cin.clear();
+ cin.ignore(1000,'\n');
+	switch(choice){
+case 1:
+isueOrReturnbook('i');
+    break;
+case 2:
+isueOrReturnbook('r');
+    break;
+case 3:
+addbook();
+    break;
+case 4:
+ModifyBookDetail();
+    break;
+case 5:
+deleteBook();
+    break;
+case 6:
+search1('a','a');
+    break;
+case 7:
+all_books('a');
+    break;
+case 8:
+unreturned_books();
+    break;
+case 9:
+memberRegistration();
+    break;
+
+case 10:
+ModifyMemberDetail();
+    break;
+case 11:
+deleteMember();
+    break;
+case 12:
+search_specific_user();
+    break;
+case 13:
+all_users();
+    break;
+/*case 14:
+     break;
+     */ //there is another function here until that is commented
+case 15:
+ main_menu();
+    break;
 }
+
+}
+			
+	
  // This is a function to register multiple members at once
 void memberRegistration(){
 
@@ -447,6 +542,7 @@ case 'j':
 
 
   // this is a function that lists books depending on how often they are read
+	
 void most_read_book(){
     int Num_search[Bcounter],counter=0;
     for (int i=0;i<Bcounter;i++){
@@ -511,6 +607,7 @@ Backoption('u');
 
 
   //this function  lists all the books that  currently exist in a library
+	
 void all_books(char p){
     int Num_search[Bcounter],count;
     for (int i=0;i<Bcounter;i++){
@@ -522,7 +619,21 @@ void all_books(char p){
         Backoption(p);
 
 }
+	
+//this function lista users used/visited the library
+void all_users(){
+	
+int Num_search[Ucounter];
+	
+    for (int i=0;i<Ucounter;i++){
+        Num_search[i]=i;
+    }
 
+    display2(Num_search,Ucounter);
+
+}
+	
+	
 //This is a function to add books to the library
 void addbook(){
 system("cls");
@@ -577,6 +688,7 @@ void ModifyBookDetail(){
         cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
 
 }
+	
 // Function to check book is exist or not
 int bookChecker()
 {
@@ -668,15 +780,12 @@ goto reenter;
 }
 
 
-
-
 }
 
 
-
-
 //this function will search the availability of specific books in the library
-//(it searches using title of the book, author and book ISBN)
+
+	//(it searches using title of the book, author and book ISBN)
 
 void search1 (char a){
 int Num_search[Bcounter],counter=0;
@@ -818,6 +927,7 @@ cout << char(188) << endl<<endl;;
 }
     Backoption('a');
 }
+	
 //function to show issued book information.
 void display2(int x[],int sizee){
    system("cls");

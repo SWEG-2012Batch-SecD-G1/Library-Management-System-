@@ -9,3 +9,6 @@ The purpose of a library management system is to provide instant and accurate da
 
 # 4th member of the group :-Mahlet Tizazu
 so far I have defined three functions the first was a function that displays the main menu screen on that it enables to identifiey whether it is a user of admin how wants to access the system, the second one is a function that enables the admin to add new book to the library and also user option function that list out the service that the customer get from the library and the last but not the least of my function is the function that enables the librarian to modify the existed book.  
+This time today I edited my previous function of user option I have already discuss what this function do and also I have added two functions the first one is addimn option from the name we can understand some thing that this function works on listing all the privilages that the admin have because of his place in addition to the user option or services.
+The other function is all user function this function lists all the person/ people who visits the library.  
+Note that most of our programs have self discripting variables intending not to confuse the user also to understand the function or the variable what is does by only seeing the name.
