@@ -1051,7 +1051,36 @@ for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*8*/
 for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206) /*10*/<< char(188)<<endl;
 
 
+// first row for a display
 
+cout << char(201);  for(int i=0; i<9; i++){cout << char(205);}cout << char(203); /*1*/ for(int i=0; i<9; i++){cout << char(205);}cout << char(203); /*2*/
+for(int i=0; i<6; i++){cout << char(205);}cout << char(203); /*3*/for(int i=0; i<11; i++){cout << char(205);}cout << char(203); /*4*/
+for(int i=0; i<11; i++){cout << char(205);}cout << char(203); /*5*/for(int i=0; i<16; i++){cout << char(205);}cout << char(203); /*6*/
+for(int i=0; i<9; i++){cout << char(205);}cout << char(203); /*7*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*11*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*8*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*10*/cout << char(187) << endl;
+
+
+
+cout << char(206) <<setw(9)<<Fiction<<char(206)  /*1*/ <<setw(9)<<Science<< char(206);/*2*/
+cout<<setw(6)<<Art<<char(206)/*3*/<<setw(11)<<Self_help<<char (206);/*4*/
+cout<<setw(11)<<Religious<<char(206)/*5*/<<setw(16)<<Social_science<<char (206);/*6*/
+cout<<setw(9)<<Amharic<<char(206);/*7*/
+cout<<setw(15)<<Research_book<<char (186);/*11*/
+cout<<setw(15)<<Programing<<char (206)/*8*/<<setw(8)<<other<<char(206)
+/*9*/<<setw(8)<<total<<char (206)/*10*/<< endl;
+
+
+
+cout << char(200);  for(int i=0; i<9; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<9; i++){cout << char(205);}cout << char(206); /*2*/
+for(int i=0; i<6; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<11; i++){cout << char(205);}cout << char(206); /*4*/
+for(int i=0; i<11; i++){cout << char(205);}cout << char(206); /*5*/for(int i=0; i<16; i++){cout << char(205);}cout << char(206); /*6*/
+for(int i=0; i<9; i++){cout << char(205);}cout << char(206); /*7*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*11*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*8*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206) /*10*/<< char(188)<<endl;
+
+
+        system("pause");
 
 
 
