@@ -2,6 +2,9 @@
 #include<iomanip>
 #include<stdlib.h>
 #include<string.h>
+#include<string>
+#include <cstdlib>
+#include <bits/stdc++.h>
 #include <windows.h>
 #include<conio.h>
 using namespace std;
@@ -75,11 +78,11 @@ void isueOrReturnbook(char);
 void thankyou();
 //*******************************************
 
-int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
- int Fiction=6 , Science ,Art ,Self_help=5, Religious=1 ,Social_science, Amharic  ,Research_book,Programing=11,other; // declaration and initialization 
-//for number of books that currently exist in each catagory 
+int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works
+ int Fiction=6 , Science ,Art ,Self_help=5, Religious=1 ,Social_science, Amharic  ,Research_book,Programing=11,other; // declaration and initialization
+//for number of books that currently exist in each catagory
 
-int Ucounter=5;// u standes for user and B stands for book 
+int Ucounter=5;// u standes for user and B stands for book
 
 //*************************************
 
@@ -241,13 +244,13 @@ else if(b=='i')
 
 
 }
-  
-//This is a function that shows the admin right or we can say privilage 	
+
+//This is a function that shows the admin right or we can say privilage
 
 void admin_option (){
     system ("cls");
 system ("color 04");
-        int choice;	
+        int choice;
 	cout <<"\n\n\n\n\n\n\n\n\n\n"<<endl;
     cout << setw(40)<< char(176);
     for(int i=0; i<90; i++){cout << char(205);}
@@ -335,8 +338,8 @@ case 15:
 }
 
 }
-			
-	
+
+
  // This is a function to register multiple members at once
 void memberRegistration(){
 
@@ -362,7 +365,7 @@ void memberRegistration(){
 
 
 }
-	// tis function deletes a library member when the member asks or in other cases 
+	// tis function deletes a library member when the member asks or in other cases
 void deleteMember(){
       i=UserChecker();
        for(int j=i; j<Ucounter;j++){  // this loop is to move the accounts forward
@@ -583,7 +586,7 @@ case 'j':
 
 
   // this is a function that lists books depending on how often they are read
-	
+
 void most_read_book(){
     int Num_search[Bcounter],counter=0;
     for (int i=0;i<Bcounter;i++){
@@ -648,7 +651,7 @@ Backoption('u');
 
 
   //this function  lists all the books that  currently exist in a library
-	
+
 void all_books(char p){
     int Num_search[Bcounter],count;
     for (int i=0;i<Bcounter;i++){
@@ -660,12 +663,12 @@ void all_books(char p){
         Backoption(p);
 
 }
-	
+
 //this function lista users used/visited the library
 void all_users(){
-	
+
 int Num_search[Ucounter];
-	
+
     for (int i=0;i<Ucounter;i++){
         Num_search[i]=i;
     }
@@ -673,11 +676,11 @@ int Num_search[Ucounter];
     display2(Num_search,Ucounter);
 
 }
-	
-	
+
+
 //This is a function to add books to the library
-	
-	
+
+
 void addbook(){
 system("cls");
     addanother;
@@ -732,7 +735,7 @@ void ModifyBookDetail(){
         cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
 
 }
-	
+
 // Function to check book is exist or not
 int bookChecker()
 {
@@ -973,7 +976,7 @@ cout << char(188) << endl<<endl;;
 }
     Backoption('a');
 }
-	
+
 //function to show issued book information.
 void display2(int x[],int sizee){
    system("cls");
@@ -1030,12 +1033,12 @@ for (int i=0;i<Ucounter;i++){
 display1(unreturned,counter);
 
 }
-	
-	
-	
-	
+
+
+
+
 void statistics(){
-	
+
 	int total=0;
        cout<<endl<<endl<<endl<<"."<<setw(45)<<"Number of books which currently exist in stalk with each Catagory "<<endl;
 
@@ -1100,9 +1103,9 @@ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i
 
 
 }
-	
+
 void decreaseCatg(int i,int ){
-	
+
 	 // below code segments decrease number of quantity in a group when a book is deleted
 
       if(book[i].catagory=="Fiction")
@@ -1128,12 +1131,12 @@ void decreaseCatg(int i,int ){
 
 
 
-	
-	
-		
-		
-		
-		
+
+
+
+
+
+
 	}
 void increaseCatg(int ,int ){
 
@@ -1163,8 +1166,8 @@ void increaseCatg(int ,int ){
 
 }
 
-	
-	
+
+
 //This function used to search specific user either by his/her name or Id number.
 void search_specific_user(){
 int counter=0;
@@ -1190,7 +1193,7 @@ else
     system("pause");
     goto again;
 }
-	
+
 int Num_search[Ucounter];
 string searchName,temp_title;
 cin.ignore();
@@ -1210,7 +1213,7 @@ transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
 
 
  }
-	
+
 
  if(by=='i'||by=='I'){
 
@@ -1238,7 +1241,7 @@ else{
 
 }
 
-	
+
 
 //This function is used to give access to the admin using his user name and password.
 //temporary userName=="Library" && password=="lib123"
@@ -1276,8 +1279,8 @@ system("pause");
 }
 
 }
-	
-	
+
+
 
 //This function do both issue and return book
 void isueOrReturnbook(char opreation ){
@@ -1310,8 +1313,8 @@ else{
 }
 
 }
-	
-	
+
+
 //return book
 if(opreation=='r' && book[bindex].issued==true){// check if the book is issued first
 book[bindex].quantity++;
