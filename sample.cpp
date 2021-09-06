@@ -83,7 +83,7 @@ int Ucounter=5;// u standes for user and B stands for book
 
 //*************************************
 
-void decreaseCatg(int i,int );
+void decreaseCatg(int ,int );
 void increaseCatg(int ,int );
 void statistics();
 
@@ -1101,9 +1101,43 @@ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i
 
 }
 	
-void decreaseCatg(int i,int ){
-	
-	 // below code segments decrease number of quantity in a group when a book is deleted
+void increaseCatg(int x,int i){
+       // the below statement increases quantity of books in each catagory;
+
+    if(book[Bcounter].catagory=="Fiction")
+         Fiction+=x;
+        else if(book[Bcounter].catagory=="Science")
+            Science+=x;
+        else if(book[Bcounter].catagory=="Art")
+               Art+=x;
+        else if(book[Bcounter].catagory=="Self help")
+              Self_help+=x;
+        else if(book[Bcounter].catagory=="Religious")
+             Religious+=x;
+        else if(book[Bcounter].catagory=="Social science")
+            Social_science+=x;
+        else if(book[Bcounter].catagory=="Amharic")
+             Amharic+=x;
+        else if(book[Bcounter].catagory=="Research book")
+              Research_book+=x;
+        else if(book[Bcounter].catagory=="Programming")
+                Programing+=x;
+        else
+             other+=x;
+
+
+
+
+
+
+
+}
+
+
+
+void decreaseCatg(int x,int i){
+
+        // below code segments decrease number of quantity in a group when a book is deleted
 
       if(book[i].catagory=="Fiction")
          Fiction-=x;
@@ -1128,37 +1162,7 @@ void decreaseCatg(int i,int ){
 
 
 
-	
-	
-		
-		
-		
-		
-	}
-void increaseCatg(int ,int ){
 
- // the below statement increases quantity of books in each catagory;
-
-    if(book[Bcounter].catagory=="Fiction")
-         Fiction+=x;
-        else if(book[Bcounter].catagory=="Science")
-            Science+=x;
-        else if(book[Bcounter].catagory=="Art")
-               Art+=x;
-        else if(book[Bcounter].catagory=="Self help")
-              Self_help+=x;
-        else if(book[Bcounter].catagory=="Religious")
-             Religious+=x;
-        else if(book[Bcounter].catagory=="Social science")
-            Social_science+=x;
-        else if(book[Bcounter].catagory=="Amharic")
-             Amharic+=x;
-        else if(book[Bcounter].catagory=="Research book")
-              Research_book+=x;
-        else if(book[Bcounter].catagory=="Programming")
-                Programing+=x;
-        else
-             other+=x;
 
 
 }
