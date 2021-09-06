@@ -1268,3 +1268,18 @@ system("pause");
 }
 	
 	
+
+//This function do both issue and return book
+void isueOrReturnbook(char opreation ){
+
+cout<<"\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"<<endl;
+if(opreation=='i')
+cout<<"\t\t       ^^^^^^^^^^^^^ ISSUE Book....  ^^^^^^^^^^^^^"<<endl;
+else if(opreation=='r')
+cout<<"\t\t       ^^^^^^^^^^^^^ Deposit Book....  ^^^^^^^^^^^^^"<<endl;
+cout<<"\t\t^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^"<<endl;
+
+int bindex,uindex,timedifference,fine;
+
+bindex=bookChecker();
+uindex=userChecker();
