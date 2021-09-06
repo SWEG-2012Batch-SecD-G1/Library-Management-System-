@@ -72,6 +72,7 @@ void unreturned_books();
 void password();
 void search_specific_user();
 void isueOrReturnbook(char);
+void thankyou();
 //*******************************************
 
 int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
@@ -1372,4 +1373,26 @@ if(opreation=='r'){
 }
 admin_option();
 
+}
+void thankyou(){
+
+ system("cls");
+
+  HANDLE c= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(c,6);
+     system("color 3F");
+cout<<"\n\t\t    %%%%%%%%%%%% %%   %%       %%        %%%%     %%   %%     %%          ";
+       cout<<"\n\t\t\t %%      %%   %%     %%  %%      %% %%    %%   %%   %%            ";
+       cout<<"\n\t\t\t %%      %%%%%%%    %%    %%     %%   %%  %%   %% %%             ";
+       cout<<"\n\t\t\t %%      %%   %%    %% %% %%     %%    %% %%   %%   %%            ";
+       cout<<"\n\t\t\t %%      %%   %%    %%    %%     %%     %%%%   %%     %%           ";
+
+
+cout<<"\n\n\n\n";
+
+cout<<"\n\t\t\t           %%     %%        %%%%         %%    %%                 ";
+       cout<<"\n\t\t\t\t    %%  %%        %%    %%       %%    %%               ";
+       cout<<"\n\t\t\t\t      %%%        %%      %%      %%    %%            ";
+       cout<<"\n\t\t\t\t      %%          %%    %%       %%    %%            ";
+       cout<<"\n\t\t\t\t      %%            %%%%         %%%%%%%%                ";
 }
