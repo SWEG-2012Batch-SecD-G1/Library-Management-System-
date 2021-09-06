@@ -1229,3 +1229,23 @@ else{
 }
 
 	
+
+//This function is used to give access to the admin using his user name and password.
+//temporary userName=="Library" && password=="lib123"
+//allow only 3 attempts.
+void password(){
+
+int attempt=0,ch;
+    next_attempt:
+   string userName,password;
+         system("cls");
+cout<<" \n\n\n\t\t    Enter User Name -->  ";
+  cin>>userName;
+  cout<<" \n\n\n\t\t    Enter Password -->  " ;
+  ch=getch();
+  while(ch!=13){
+    password.push_back(ch);
+    cout<<'*';                  //making the password invisible.
+    ch=getch();
+
+  }
