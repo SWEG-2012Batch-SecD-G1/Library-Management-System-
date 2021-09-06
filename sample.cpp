@@ -1283,3 +1283,21 @@ int bindex,uindex,timedifference,fine;
 
 bindex=bookChecker();
 uindex=userChecker();
+if(opreation=='i'){
+            //issue only if there exist 2 or more quantities left in the library.
+        if( book[bindex].quantity>1){
+           book[bindex].quantity--;
+book[bindex].read_freq++;
+book[bindex].issued=true;
+
+user[uindex].num_issued_book++;
+user[uindex].issued_book=book[bindex];
+cout<<"Enter issued date(DD-MM-YY): ";
+cin>>user[uindex].issue_date.dd>>user[uindex].issue_date.mm>>user[uindex].issue_date.yy;
+}
+else{
+    cout<<"Sorry this book can't be borrowed...not enough quantity exist!";
+}
+
+}
+	
