@@ -1314,3 +1314,38 @@ cout<<"\nPlease rate this book out of 5: ";
 int r;
 cin>>r;
 book[bindex].rate=(book[bindex].rate+r)/2;      //calculating the rating
+
+	//calculating the return date and fee.
+int yydifference=365*(user[uindex].return_date.yy - user[uindex].issue_date.yy);
+int mmdifference=30*(user[uindex].return_date.mm - user[uindex].issue_date.mm);
+int dddifference=(user[uindex].return_date.dd - user[uindex].issue_date.dd);
+ timedifference=yydifference+mmdifference+dddifference;
+ fine= (timedifference-5) *2;
+
+}
+//giving information about the transaction
+cout<<"\n\n";
+cout<<"BOOK"<<endl;
+cout<<"___________________"<<endl;
+cout<<"Book_ID: "<<book[bindex].book_id<<endl;
+cout<<"BOOk Title: "<<book[bindex].title<<endl;
+cout<<"Author: "<<book[bindex].author<<endl;
+cout<<"______________";
+
+cout<<"\n\n Issued By "<<endl;
+cout<<"______________"<<endl;
+cout<<"User Id: "<<user[uindex].user_id<<endl;
+cout<<"Name: "<<user[uindex].name<<endl;
+cout<<"Phone NO: "<<user[uindex].user_address.phone<<endl;
+cout<<"______________\n\n";
+if(opreation=='i'){
+cout<<" Date(DD-MM-YY) "<<endl;
+cout<<"______________"<<endl;
+cout<<"Issued Date: "<<user[uindex].issue_date.dd<<"-"<<user[uindex].issue_date.mm<<"-"<<user[uindex].issue_date.yy<<endl;
+cout<<"Should be returned: ";
+if(user[uindex].issue_date.dd+5-30>0){
+    cout<<user[uindex].issue_date.dd+5-30<<"-"<<user[uindex].issue_date.mm+1<<"-"<<user[uindex].issue_date.yy<<endl;
+}
+else{
+ cout<<user[uindex].issue_date.dd+5<<"-"<<user[uindex].issue_date.mm<<"-"<<user[uindex].issue_date.yy<<endl;
+}
