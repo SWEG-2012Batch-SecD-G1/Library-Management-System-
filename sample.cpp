@@ -1151,7 +1151,35 @@ void increaseCatg(int ,int ){
              other+=x;
 
 
-
-
-
 }
+
+	
+	
+//This function used to search specific user either by his/her name or Id number.
+void search_specific_user(){
+int counter=0;
+again:
+system ("cls");
+    char by;
+    cout<<"search By---->[N] Name\tOR\t[I]ID\n";
+    cin>>by;
+
+if(by=='n'||by=='N'){
+
+   cout<<"\n\n\n"<<"           "<<"Please Enter the Name of the User: "<<endl;
+}
+
+else if(by=='i'||by=='I'){
+
+   cout<<"\n\n\n"<<"           "<<"Please Enter the ID of the User: "<<endl;
+}
+
+else
+{
+    cout<<"Wrong Input!!\n";
+    system("pause");
+    goto again;
+}
+	
+	
+	
