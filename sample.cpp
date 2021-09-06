@@ -1305,6 +1305,9 @@ if(opreation=='i'){
             //issue only if there exist 2 or more quantities left in the library.
         if( book[bindex].quantity>1){
            book[bindex].quantity--;
+		
+    decreaseCatg(1,bindex);  // calls a function that  decrease the number from a given catagory
+		
 book[bindex].read_freq++;
 book[bindex].issued=true;
 
@@ -1323,6 +1326,10 @@ else{
 //return book
 if(opreation=='r' && book[bindex].issued==true){// check if the book is issued first
 book[bindex].quantity++;
+	
+	
+increaseCatg(1,bindex);  // this increases the given catagory by one when the book is returned 
+	
 book[bindex].issued=false;
 user[uindex].num_issued_book--;
 
