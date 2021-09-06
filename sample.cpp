@@ -661,6 +661,8 @@ int Num_search[Ucounter];
 	
 	
 //This is a function to add books to the library
+	
+	
 void addbook(){
 system("cls");
     addanother;
@@ -676,6 +678,7 @@ system("cls");
    cout<<"Enter Book's Edition  : ";  cin>>book[Bcounter].edition;
    cout<<"Enter Book's Date of publication  : ";  cin>>book[Bcounter].date_of_pub.dd>>book[Bcounter].date_of_pub.mm>>book[Bcounter].date_of_pub.yy;
 
+   increaseCatg(book[Bcounter].quantity,Bcounter);  //calls a function to quantity in a given category
 
    cout<<"Book added succesfully"<<endl;
     Bcounter++;
@@ -742,6 +745,8 @@ go to reenter;
 void deleteBook()
 {
 i=bookChecker();
+decreaseCatg(book[i].quantity,i);  // calls a function that  decrease the number from a given catagory
+
 for(int j=i;j<Bcounter;j++){
 book[j].title=book[j+1].title;
 book[j].author =book[j+1].author ;
