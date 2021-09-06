@@ -1301,3 +1301,16 @@ else{
 
 }
 	
+	
+//return book
+if(opreation=='r' && book[bindex].issued==true){// check if the book is issued first
+book[bindex].quantity++;
+book[bindex].issued=false;
+user[uindex].num_issued_book--;
+
+cout<<"Enter return date(DD-MM-YY): ";
+cin>>user[uindex].return_date.dd>>user[uindex].return_date.mm>>user[uindex].return_date.yy;
+cout<<"\nPlease rate this book out of 5: ";
+int r;
+cin>>r;
+book[bindex].rate=(book[bindex].rate+r)/2;      //calculating the rating
