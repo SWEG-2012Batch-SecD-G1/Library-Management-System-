@@ -1249,3 +1249,22 @@ cout<<" \n\n\n\t\t    Enter User Name -->  ";
     ch=getch();
 
   }
+
+if(userName=="Library" && password=="lib123")
+{
+ admin_option ();
+}
+else{
+  attempt++;
+  cout<<" \n\n\n\t\t    Wrong Password or User name,  Try Again ";
+  cout<<" \n\n\n\t\t    You have "<<3-attempt <<" attempts left\n\n ";
+system("pause");
+  if(attempt<3)
+  goto next_attempt;
+  else
+   exit (EXIT_SUCCESS);
+}
+
+}
+	
+	
