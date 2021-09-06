@@ -326,9 +326,9 @@ search_specific_user();
 case 13:
 all_users();
     break;
-/*case 14:
+case 14:
      break;
-     */ //there is another function here until that is commented
+     
 case 15:
  main_menu();
     break;
