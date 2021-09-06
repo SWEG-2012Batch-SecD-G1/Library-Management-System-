@@ -1135,6 +1135,7 @@ void increaseCatg(int x,int i){
 }
 
 
+	
 
 void decreaseCatg(int x,int i){
 
@@ -1167,6 +1168,8 @@ void decreaseCatg(int x,int i){
 
 
 }
+
+	
 
 	
 	
@@ -1379,6 +1382,49 @@ if(opreation=='r'){
 admin_option();
 
 }
+	
+
+	
+void Backoption(char pa){
+    char rchoice;
+
+  cout<<"\n\n\n"<<"Main menu [M]      Back [B]            Exit [E]   "<<endl;
+   reenter:
+  cin>>rchoice ;
+
+  if(rchoice=='M'||rchoice=='m')
+
+     main_menu();
+  else if(rchoice=='B'||rchoice=='b')
+{
+    if(pa=='a')
+    admin_option();
+      else
+      user_option();
+
+}
+
+
+  else if(rchoice=='E'||rchoice=='e'){
+
+     stop=true;
+     cout<<"\n\n\nThank You For Using Our Program...Bye!\n";
+exit (EXIT_SUCCESS);
+  }
+  else
+    goto reenter;
+
+
+
+
+
+}
+
+
+	
+	
+	
+	
 void thankyou(){
 
  system("cls");
