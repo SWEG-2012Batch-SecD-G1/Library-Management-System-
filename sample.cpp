@@ -1011,6 +1011,32 @@ display1(unreturned,counter);
 	
 void decreaseCatg(int i,int ){
 	
+	 // below code segments decrease number of quantity in a group when a book is deleted
+
+      if(book[i].catagory=="Fiction")
+         Fiction-=x;
+        else if(book[i].catagory=="Science")
+            Science-=x;
+        else if(book[i].catagory=="Art")
+               Art-=x;
+        else if(book[i].catagory=="Self help")
+              Self_help-=x;
+        else if(book[i].catagory=="Religious")
+             Religious-=x;
+        else if(book[i].catagory=="Social science")
+            Social_science-=x;
+        else if(book[i].catagory=="Amharic")
+             Amharic-=x;
+        else if(book[i].catagory=="Research book")
+              Research_book-=x;
+        else if(book[i].catagory=="Programming")
+                Programing-=x;
+        else
+             other-=x;
+
+
+
+	
 	
 		
 		
