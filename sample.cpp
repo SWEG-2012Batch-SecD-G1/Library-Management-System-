@@ -148,25 +148,34 @@ while(choose!=3);
 //This function is used to generate a welcome page
 void welcome(){
  system("cls");
+ HANDLE a= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(a,2);
+
   cout<<"\t%%      %%      ";
        cout<<"\n\t%%      %% %%%%%%% %%      %%%%%%  %%%%%% %%%%  %%%% %%%%%%%";
        cout<<"\n\t%%      %% %%      %%      %%      %%  %% %%  %%% %% %%       ";
-
-
        cout<<"\n\t%%  %%  %% %%%%%   %%      %%      %%  %% %%  %%% %% %%%%%      ";
        cout<<"\n\t%%  %%  %% %%      %%      %%      %%  %% %%      %% %%           ";
        cout<<"\n\t%%%%%%%%%% %%%%%%% %%%%%%% %%%%%%% %%%%%% %%      %% %%%%%%%     ";
+        HANDLE b= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(b,6);
        cout<<"\n\n\t\t\t        $$$$$$$$  $$$$$        ";
        cout<<"\n\t\t\t           $$     $   $      ";
        cout<<"\n\t\t\t           $$     $$$$$    ";
 
+
        cout<<"\n\n\n\t\t\t  (******** 5M LIBERARY  *******)";
-        cout<<"\n\n\n --->  Made By: Group 1 ";
-        cout<<"\n --->  AASTU 2021 All right reserved  ";
+        HANDLE c= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(c,4);
+        cout<<"\n\n\n\t\t --->  Made By: SEC D G1 ";
+        cout<<"\n\t\t --->  AASTU 2021 All right reserved  ";
 
 cout<<"\n\n\n";
-
+system ("pause");
+  HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(d,7);
 }
+
 
 //This is a function that enables the person who access is whether a user or admin
 void main_menu(){
