@@ -327,6 +327,7 @@ case 13:
 all_users();
     break;
 case 14:
+	statistics();
      break;
      
 case 15:
