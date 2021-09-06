@@ -1201,4 +1201,30 @@ transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
 
  }
 	
-	
+
+ if(by=='i'||by=='I'){
+
+ for (int i=0;i<Ucounter;i++){
+    temp_title=user[i].user_id;
+transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
+        if (temp_title==searchName){
+      Num_search[counter]=i;
+      counter++;
+    }
+}
+
+
+ }
+
+if (counter>0){
+   display2 (Num_search,counter);
+}
+else{
+
+  cout<<"NO Search Result found...!\n";
+   system("pause");
+
+}
+
+}
+
