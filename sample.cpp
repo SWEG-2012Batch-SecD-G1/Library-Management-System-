@@ -68,6 +68,10 @@ void display1(int x[],int sizee);
 void display2(int x[],int sizee);
 void unreturned_books();
 
+
+void password();
+void search_specific_user();
+void isueOrReturnbook(char);
 //*******************************************
 
 int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
