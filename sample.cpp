@@ -80,6 +80,7 @@ int Ucounter=5;// u standes for user and B stands for book
 
 void decreaseCatg(int i,int );
 void increaseCatg(int ,int );
+void statistics();
 
 
 //**************************************
@@ -1016,6 +1017,46 @@ display1(unreturned,counter);
 
 }
 	
+	
+	
+	
+void statistics(){
+	
+	int total=0;
+       cout<<endl<<endl<<endl<<"."<<setw(45)<<"Number of books which currently exist in stalk with each Catagory "<<endl;
+
+       for(int i=0;i<Bcounter;i++)
+        total+=book[i].quantity;
+
+
+cout << char(201);  for(int i=0; i<9; i++){cout << char(205);}cout << char(203); /*1*/ for(int i=0; i<9; i++){cout << char(205);}cout << char(203); /*2*/
+for(int i=0; i<6; i++){cout << char(205);}cout << char(203); /*3*/for(int i=0; i<11; i++){cout << char(205);}cout << char(203); /*4*/
+for(int i=0; i<11; i++){cout << char(205);}cout << char(203); /*5*/for(int i=0; i<16; i++){cout << char(205);}cout << char(203); /*6*/
+for(int i=0; i<9; i++){cout << char(205);}cout << char(203); /*7*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*11*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*8*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*10*/cout << char(187) << endl;
+
+cout << char(186) <<setw(4)<<" Fiction "<<char(186)  /*1*/ <<setw(8)<<" Science "<< char(186);/*2*/
+cout<<setw(6)<<" Art "<<char(186)/*3*/<<setw(10)<<" Self help "<<char (186);/*4*/
+cout<<setw(10)<<" Religious "<<char(186)/*5*/<<setw(8)<<" Social science "<<char (186);/*6*/
+cout<<setw(8)<<" Amharic "<<char(186);/*7*/
+cout<<setw(10)<<" Research Book "<<char (186);/*11*/
+cout<<setw(15)<<" Programming "<<char (186)/*8*/<<setw(8)<<" Other "<<char(186)/*9*/<<setw(8)<<" Total "<<char (186)/*10*/<< endl;
+
+cout << char(200);  for(int i=0; i<9; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<9; i++){cout << char(205);}cout << char(206); /*2*/
+for(int i=0; i<6; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<11; i++){cout << char(205);}cout << char(206); /*4*/
+for(int i=0; i<11; i++){cout << char(205);}cout << char(206); /*5*/for(int i=0; i<16; i++){cout << char(205);}cout << char(206); /*6*/
+for(int i=0; i<9; i++){cout << char(205);}cout << char(206); /*7*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*11*/
+for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*8*/
+for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206) /*10*/<< char(188)<<endl;
+
+
+
+
+
+
+
+}
 	
 void decreaseCatg(int i,int ){
 	
