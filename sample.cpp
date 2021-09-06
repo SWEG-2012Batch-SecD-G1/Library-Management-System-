@@ -1349,3 +1349,18 @@ if(user[uindex].issue_date.dd+5-30>0){
 else{
  cout<<user[uindex].issue_date.dd+5<<"-"<<user[uindex].issue_date.mm<<"-"<<user[uindex].issue_date.yy<<endl;
 }
+cout<<"______________\n\n";
+cout<<"Book issued successfully...\n\n";
+cout<<"Note: Submit within 5 days, you will pay 2 Birr for each day after 5 day period.\n\n";
+system("pause");
+}
+
+if(opreation=='r'){
+
+  cout<<"The book returned after "<<timedifference<<" days\n\n";
+  cout<<"Fine has to be deposited "<<fine<<" Birr\n\n";
+  cout<<"\t\tBook Deposited Successfully...\n\n";system("pause");
+}
+admin_option();
+
+}
