@@ -71,6 +71,9 @@ void unreturned_books();
 //*******************************************
 
 int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
+ int Fiction=6 , Science ,Art ,Self_help=5, Religious=1 ,Social_science, Amharic  ,Research_book,Programing=11,other; // declaration and initialization 
+//for number of books that currently exist in each catagory 
+
 int Ucounter=5;// u standes for user and B stands for book 
 
 //*************************************
