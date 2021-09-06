@@ -1181,5 +1181,24 @@ else
     goto again;
 }
 	
+int Num_search[Ucounter];
+string searchName,temp_title;
+cin.ignore();
+getline (cin, searchName);
+ transform (searchName.begin(),searchName.end(),searchName.begin(),:: tolower);
+
+ if(by=='n'||by=='N'){
+
+ for (int i=0;i<Ucounter;i++){
+    temp_title=user[i].name;
+transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
+        if (temp_title==searchName){
+      Num_search[counter]=i;
+      counter++;
+    }
+}
+
+
+ }
 	
 	
