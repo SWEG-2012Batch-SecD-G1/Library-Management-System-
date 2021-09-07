@@ -858,12 +858,21 @@ transform (temp_title.begin(),temp_title.end(),temp_title.begin(),:: tolower);
 // function to display book information tabularly ***********************
 void display(int x[],int sizee){
    system("cls");
-cout <<"\n\n\n"<<endl;cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(203); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*2*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*4*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*6*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(203); /*11*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(203); /*8*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203); /*10*/cout << char(187) << endl;
+	HANDLE b= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(b,6);
+cout <<"\n\n\n"<<endl;cout << char(201); 
+for(int i=0; i<4; i++){cout << char(205);}cout << char(203); 
+/*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(203); 
+/*2*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); 
+/*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203);
+/*4*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203);
+/*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203);
+/*6*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203);
+/*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(203); 
+/*11*/for(int i=0; i<15; i++){cout << char(205);}cout << char(203); 
+/*8*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203);
+/*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(203); 
+/*10*/cout << char(187) << endl;
 
 cout << char(186) <<setw(4)<<"No"<<char(186);
  /*1*/ cout<<setw(8)<<"book_id"<< char(186);
@@ -878,16 +887,23 @@ cout << char(186) <<setw(4)<<"No"<<char(186);
  /*9*/cout<<setw(8)<<"isbn"<<char (186);
  /*10*/cout<< endl;
 
-cout << char(200);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206); /*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*2*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*4*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*6*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(206); /*11*/
-for(int i=0; i<15; i++){cout << char(205);}cout << char(206); /*8*/
-for(int i=0; i<8; i++){cout << char(205);}cout << char(206); /*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206) /*10*/<< char(188)<<endl;
+cout << char(200);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206); 
+/*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*2*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); 
+/*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); 
+/*4*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); 
+/*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*6*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*7*/for(int i=0; i<18; i++){cout << char(205);}cout << char(206); 
+/*11*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206); 
+/*8*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
+/*9*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206) 
+/*10*/<< char(188)<<endl;
 
 for (int i=0;i<sizee;i++){
 cout << char(201);  for(int i=0; i<4; i++){cout << char(205);}cout << char(206);
-/*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206);  /*2*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
+/*1*/ for(int i=0; i<8; i++){cout << char(205);}cout << char(206);  
+/*2*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
 /*3*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
 /*4*/for(int i=0; i<15; i++){cout << char(205);}cout << char(206);
 /*5*/for(int i=0; i<8; i++){cout << char(205);}cout << char(206);
