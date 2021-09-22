@@ -703,27 +703,41 @@ int Num_search[Ucounter];
 	
 void addbook(){
 system("cls");
-    addanother;
+string str="ADDING NEW BOOK...";
+HANDLE o= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(o,11);
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\t\t*                   "<<str;
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\n\n";
+HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(d,7);
+    addanother:  // it gives the  the admin the chance to add multiple books ;
     cout<<"Add Book details "<<endl;
 
    cout<<"Enter book Title : ";    getline(cin,book[Bcounter].title);
    cout<<"Enter Author's Name   : ";  getline(cin,book[Bcounter].author);
    cout<<"Enter Shelf number : ";  getline(cin,book[Bcounter].shelf_no);
-   cout<<"Enter Book Id : ";   getline(cin,book[Bcounter].book_id);
+   bid++;
+   book[Bcounter].book_id="b"+ to_string(bid);
    cout<<"Enter Book category  : ";  getline(cin,book[Bcounter].catagory);
    cout<<"Enter Book's Quantity : ";  cin>>book[Bcounter].quantity;
    cout<<"Enter Book's ISBN number : ";  cin>>book[Bcounter].isbn;
    cout<<"Enter Book's Edition  : ";  cin>>book[Bcounter].edition;
-   cout<<"Enter Book's Date of publication  : ";  cin>>book[Bcounter].date_of_pub.dd>>book[Bcounter].date_of_pub.mm>>book[Bcounter].date_of_pub.yy;
+   cout<<"Enter Book's Date of publication(DD MM YY): ";  cin>>book[Bcounter].date_of_pub.dd>>book[Bcounter].date_of_pub.mm>>book[Bcounter].date_of_pub.yy;
 
    increaseCatg(book[Bcounter].quantity,Bcounter);  //calls a function to quantity in a given category
-
-   cout<<"Book added succesfully"<<endl;
+   ofstream write("Books.txt",ios::app);
+write<<book[Bcounter].book_id<<","<<book[Bcounter].title<<","<<book[Bcounter].author<<","
+<<book[Bcounter].shelf_no<<","<<book[Bcounter].catagory<<","<<book[Bcounter].quantity<<","<<book[Bcounter].isbn<<","
+<<book[Bcounter].edition<<","<<book[Bcounter].date_of_pub.yy<<","<<book[Bcounter].date_of_pub.mm<<","<<book[Bcounter].date_of_pub.dd<<","
+<<book[Bcounter].rate<<","<<book[Bcounter].read_freq<<","<<book[Bcounter].issued<<"\n";
+write.close();
+   cout<<"Book added successfully"<<endl;
     Bcounter++;
      int choice ;
     cout<<"Do you want to Add another book 1(yes ) or 2(NO) "; cin>>choice;
     cin.ignore();
-      // system ("cls");
 
        if (choice==1)
         goto addanother;
