@@ -88,6 +88,7 @@ void increaseCatg(int ,int );
 void statistics();
 void thankyou();
 void counter_updater(char);
+void change_pass();
 void Read();
 void Write(char);
 
@@ -111,6 +112,7 @@ Book *book= new Book[Ucounter+ 1000];
 
 
 ///***************************************************************
+
 ///            FUNCTION DEFINITION STARTS HERE
 ///****************************************************************
 
@@ -597,7 +599,7 @@ void recent_books(){
 display (Num_search,counter,"RECENT BOOKS");
 Backoption('u');
 }
-<template>
+
 void all_books(char p){
     int Num_search[Bcounter];
     for (int i=0;i<Bcounter;i++){
@@ -1079,7 +1081,8 @@ system ("color 04");
         cout << setw(40)<< char(176)<<setw(5)<<"12,"<<"Search specific user record"<<endl;
       cout << setw(40)<< char(176)<<setw(5)<<"13,"<<"Display all user record"<<endl;
       cout << setw(40)<< char(176)<<setw(5)<<"14,"<<"Statics "<<endl;
-       cout << setw(40)<< char(176)<<setw(5)<<"15,"<<"Back to Main Menu "<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"15,"<<"CHANGE PASSWORD"<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"16,"<<"Back to Main Menu "<<endl;
         cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
         cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
         cout << setw(40)<< char(176)<<setw(30)<<" "<<"please your choice--> "; cin >>choice;
@@ -1136,8 +1139,10 @@ all_users();
 case 14:
 statistics();
     break;
-
- case 15:
+case 15:
+    change_pass();
+    break;
+ case 16:
  main_menu();
     break;
 
@@ -1150,7 +1155,9 @@ void password(){
 
 int attempt=0,ch;
     next_attempt:
-   string userName,password;
+   string userName,password,prv;
+   ifstream inp("pass.dat", ios::binary);
+getline(inp,prv);
          system("cls");
          string str="Login/Sign in ";
 HANDLE b= GetStdHandle(STD_OUTPUT_HANDLE);
@@ -1172,7 +1179,7 @@ cout<<" \n\n\n\t\t    Enter User Name -->  ";
 
   }
 
-if(userName=="5m" && password=="lib123")
+if(userName=="5m" && password==prv)
 {
  admin_option ();
 }
@@ -1575,3 +1582,228 @@ cout<<"\n\t\t\t           %%     %%        %%%%         %%    %%                
 }
 
 
+void counter_updater(char c){
+if(c=='s'){
+  ifstream coin("Bcounter.txt");
+if(!coin.fail()){
+  coin>>Bcounter;
+coin.close();
+
+coin.open("Ucounter.txt");
+coin>>Ucounter;
+coin.close();
+
+coin.open("bid.txt");
+coin>>bid;
+coin.close();
+
+coin.open("uid.txt");
+coin>>uid;
+coin.close();
+
+}
+else
+{
+    cerr<<"File not Exist!!";
+    getch();
+    exit(1);
+}
+
+
+}
+
+if(c=='e'){
+
+ofstream out;
+
+out.open("Bcounter.txt");
+out<<Bcounter;
+out.close();
+
+out.open("Ucounter.txt");
+out<<Ucounter;
+out.close();
+
+out.open("bid.txt");
+out<<bid;
+out.close();
+
+out.open("uid.txt");
+out<<uid;
+out.close();
+}
+
+}
+
+void Read(){
+string line,tempstr;
+ifstream read;
+///********************** BOOK DATA ******************//
+read.open("Books.txt");
+if(!read.fail()){
+   int l=0;
+  while(getline(read,line)){
+    stringstream ss(line);
+    getline(ss,book[l].book_id,',');
+     getline(ss,book[l].title,',');
+     getline(ss,book[l].author,',');
+     getline(ss,book[l].shelf_no,',');
+     getline(ss,book[l].catagory,',');
+      getline(ss,tempstr,',');
+    book[l].quantity = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].isbn= stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].edition= stoi(tempstr);
+
+    getline(ss,tempstr,',');
+    book[l].date_of_pub.yy = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].date_of_pub.mm = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].date_of_pub.dd = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].rate = stof(tempstr);
+     getline(ss,tempstr,',');
+    book[l].read_freq = stoi(tempstr);
+
+     getline(ss,tempstr,',');
+        if(tempstr=="1")
+        book[l].issued = 1;
+
+    l++;
+   }
+
+}
+else
+{
+    cerr<<"File not Exist!!";
+}
+
+read.close();
+
+///**************** USER DATA ****************************///
+
+read.open("Users.txt");
+if(!read.fail()){
+  int l=0;
+  while(getline(read,line)){
+    stringstream ss(line);
+     getline(ss,user[l].name,',');
+     getline(ss,user[l].user_id,',');
+getline(ss,tempstr,',');
+    user[l].age= stoi(tempstr);
+
+    getline(ss,tempstr,',');
+    user[l].user_address.house_no= stoi(tempstr);
+    getline(ss,user[l].user_address.phone,',');
+
+     getline(ss,tempstr,',');
+    user[l].num_issued_book= stoi(tempstr);
+
+    getline(ss,tempstr,',');
+    user[l].issue_date.yy= stoi(tempstr);
+    getline(ss,tempstr,',');
+    user[l].issue_date.mm= stoi(tempstr);
+    getline(ss,tempstr,',');
+    user[l].issue_date.dd= stoi(tempstr);
+
+     getline(ss,tempstr,',');
+    user[l].return_date.yy= stoi(tempstr);
+     getline(ss,tempstr,',');
+    user[l].return_date.mm= stoi(tempstr);
+     getline(ss,tempstr,',');
+    user[l].return_date.dd= stoi(tempstr);
+
+     getline(ss,tempstr,',');
+    if(tempstr=="1")
+    user[l].issued_book.issued=1;
+
+    getline(ss,user[l].issued_book.book_id,',');
+getline(ss,user[l].issued_book.title,',');
+
+
+    l++;
+  }
+
+}
+
+else
+    cerr<<"File not Exist!!";
+
+read.close();
+
+///**************** STASTICAL DATA ****************************///
+
+read.open("stastics.txt");
+read>>Fiction>>Science>>Art>>Self_help>>Religious>>Social_science>>Amharic>>Research_book>>Programing>>other;
+read.close();
+
+}
+void Write(char c){
+ofstream write;
+if(c=='b'){
+   write.open("Books.txt");
+for(int i=0; i<Bcounter; i++){
+  write<<book[i].book_id<<","<<book[i].title<<","<<book[i].author<<","
+<<book[i].shelf_no<<","<<book[i].catagory<<","<<book[i].quantity<<","<<book[i].isbn<<","
+<<book[i].edition<<","<<book[i].date_of_pub.yy<<","<<book[i].date_of_pub.mm<<","<<book[i].date_of_pub.dd<<","
+<<book[i].rate<<","<<book[i].read_freq<<","<<book[i].issued<<"\n";
+
+}
+
+}
+
+       if(c=='u'){
+        write.open("Users.txt");
+    for(int j=0; j<Ucounter;j++){
+        write<<user[j].name<<","<<user[j].user_id<<","<<user[j].age<<","<<user[j]. user_address.house_no<<","
+<<user[j]. user_address.phone<<","<<user[j].num_issued_book<<","
+<<user[j].issue_date.yy<<","<<user[j].issue_date.mm<<","<<user[j].issue_date.dd<<","
+<<user[j].return_date.yy<<","<<user[j].return_date.mm<<","<<user[j].return_date.dd<<","
+<<user[j].issued_book.issued<<","<<user[j].issued_book.book_id<<","<<user[j].issued_book.title<<"\n";
+
+}
+
+}
+
+ if(c=='s'){
+        write.open("stastics.txt");
+        write<<Fiction<<" "<<Science<<" "<<Art<<" "<<Self_help<<" "<<Religious<<" "<<Social_science<<" "
+        <<Amharic<<" "<<Research_book<<" "<<Programing<<" "<<other;
+ }
+
+  write.close();
+
+}
+
+
+void change_pass(){
+string newpass,curpass,prv;
+
+ifstream inp("pass.dat", ios::binary);
+getline(inp,prv);
+
+inp.close();
+
+cout<<"\nEnter the CURRENT PASSWORD: ";
+cin>>curpass;
+if(curpass==prv)
+{
+  cout<<"Enter the NEW PASSWORD: ";
+cin>>newpass;
+
+    ofstream outp("pass.dat",ios::binary);
+    outp<<newpass;
+outp.close();
+
+cout<<"Password Changed Successfully!!!\n";
+
+}
+
+else{
+ cout<<"Password is Incorrect !!!\n\n";
+}
+system("pause");
+admin_option();
+}
