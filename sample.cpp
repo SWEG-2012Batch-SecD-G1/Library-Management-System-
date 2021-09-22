@@ -751,24 +751,38 @@ else
 
 void ModifyBookDetail(){
 
-          i=bookChecker();
-
+      string str="MODIFIYING BOOK DETAILS...";
+HANDLE b= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(b,11);
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\t\t*                   "<<str;
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\n\n";
+HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(d,7);
+           i=bookChecker();
        // then display the existing details
-
-
+          int g[1]={};
+          g[0]=i;
+          display(g,1,str);
 
         cout<<"Enter the New book Details "<<endl;
         cout<<"Enter book Title : ";    getline(cin,book[i].title);
         cout<<"Enter Author's Name   : ";  getline(cin,book[i].author);
         cout<<"Enter Shelf number : ";  getline(cin,book[i].shelf_no);
-        cout<<"Enter Book Id : ";   getline(cin,book[i].book_id);
         cout<<"Enter Book category  : ";  getline(cin,book[i].catagory);
         cout<<"Enter Book's Quantity : ";  cin>>book[i].quantity;
         cout<<"Enter Book's ISBN number : ";  cin>>book[i].isbn;
         cout<<"Enter Book's Edition  : ";  cin>>book[i].edition;
         cout<<"Enter Book's Date of publication  : ";  cin>>book[i].date_of_pub.dd>>book[i].date_of_pub.mm>>book[i].date_of_pub.yy;
 
+      Write('b');
+cout<<"Book Info Updated Successfully!!\n";
+system("pause");
+admin_option();
+
 }
+
 	
 // Function to check book is exist or not
 int bookChecker()
