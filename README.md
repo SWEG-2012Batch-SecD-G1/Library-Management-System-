@@ -12,4 +12,4 @@ so far I have defined three functions the first was a function that displays the
 This time today I edited my previous function of user option I have already discuss what this function do and also I have added two functions the first one is addimn option from the name we can understand some thing that this function works on listing all the privilages that the admin have because of his place in addition to the user option or services.
 The other function is all user function this function lists all the person/ people who visits the library.  
 Note that most of our programs have self discripting variables intending not to confuse the user also to understand the function or the variable what is does by only seeing the name.
-i have updated my previous main menu by adding some features on it!
+i have updated my previous main menu and user option function  by adding some features on it!
