@@ -1573,5 +1573,63 @@ cout<<"\n\t\t\t           %%     %%        %%%%         %%    %%                
        cout<<"\n\t\t\t\t      %%          %%    %%       %%    %%            ";
        cout<<"\n\t\t\t\t      %%            %%%%         %%%%%%%%                ";
 }
+//**************** USER DATA ****************************///
+
+read.open("Users.txt");
+if(!read.fail()){
+  int l=0;
+  while(getline(read,line)){
+    stringstream ss(line);
+     getline(ss,user[l].name,',');
+     getline(ss,user[l].user_id,',');
+getline(ss,tempstr,',');
+    user[l].age= stoi(tempstr);
+
+    getline(ss,tempstr,',');
+    user[l].user_address.house_no= stoi(tempstr);
+    getline(ss,user[l].user_address.phone,',');
+
+     getline(ss,tempstr,',');
+    user[l].num_issued_book= stoi(tempstr);
+
+    getline(ss,tempstr,',');
+    user[l].issue_date.yy= stoi(tempstr);
+    getline(ss,tempstr,',');
+    user[l].issue_date.mm= stoi(tempstr);
+    getline(ss,tempstr,',');
+    user[l].issue_date.dd= stoi(tempstr);
+
+     getline(ss,tempstr,',');
+    user[l].return_date.yy= stoi(tempstr);
+     getline(ss,tempstr,',');
+    user[l].return_date.mm= stoi(tempstr);
+     getline(ss,tempstr,',');
+    user[l].return_date.dd= stoi(tempstr);
+
+     getline(ss,tempstr,',');
+    if(tempstr=="1")
+    user[l].issued_book.issued=1;
+
+    getline(ss,user[l].issued_book.book_id,',');
+getline(ss,user[l].issued_book.title,',');
+
+
+    l++;
+  }
+
+}
+
+else
+    cerr<<"File not Exist!!";
+
+read.close();
+
+///**************** STASTICAL DATA ****************************///
+
+read.open("stastics.txt");
+read>>Fiction>>Science>>Art>>Self_help>>Religious>>Social_science>>Amharic>>Research_book>>Programing>>other;
+read.close();
+
+}
 
 
