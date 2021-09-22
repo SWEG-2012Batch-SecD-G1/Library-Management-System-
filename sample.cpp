@@ -90,6 +90,7 @@ void thankyou();
 void counter_updater(char);
 void Read();
 void Write(char);
+void activity_record(char n,int i);
 
 
 
@@ -870,6 +871,7 @@ cout<<"\n\n";
 HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(d,7);
        i=userChecker();
+       activity_record('d', i);
        for(int j=i; j<Ucounter;j++){  // this loop is to move the accounts forward
              user[j].name=user[j+1].name;
              user[j].user_id=user[j+1].user_id;
@@ -1790,4 +1792,25 @@ out<<uid;
 out.close();
 }
 
+}
+void activity_record(char n,int i){
+    ofstream activity;
+activity.open("activity.txt",ios::app);
+ if (!activity){
+    cout <<"your activity has been recorded"<<endl;
+ }
+ switch (n){
+ case 'd':
+
+ string name;
+ name=user[i].name;
+activity<<"name:  "<<name<<endl;
+ activity<<"id:   :"<<user[i].user_id<<endl;
+activity<<"age:   "<<user[i].age<<endl;
+activity<<"house no:  "<<user[i].user_address.house_no<<endl;
+activity <<"phone:  "<<user[i].user_address.phone<<endl;
+cout <<"why this id not working"<<endl;
+break;
+//case 'b':
+ }
 }
