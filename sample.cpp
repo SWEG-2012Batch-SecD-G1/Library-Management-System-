@@ -1632,4 +1632,50 @@ read.close();
 
 }
 
+void Read(){
+string line,tempstr;
+ifstream read;
+///********************** BOOK DATA ******************//
+read.open("Books.txt");
+if(!read.fail()){
+   int l=0;
+  while(getline(read,line)){
+    stringstream ss(line);
+    getline(ss,book[l].book_id,',');
+     getline(ss,book[l].title,',');
+     getline(ss,book[l].author,',');
+     getline(ss,book[l].shelf_no,',');
+     getline(ss,book[l].catagory,',');
+      getline(ss,tempstr,',');
+    book[l].quantity = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].isbn= stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].edition= stoi(tempstr);
+
+    getline(ss,tempstr,',');
+    book[l].date_of_pub.yy = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].date_of_pub.mm = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].date_of_pub.dd = stoi(tempstr);
+     getline(ss,tempstr,',');
+    book[l].rate = stof(tempstr);
+     getline(ss,tempstr,',');
+    book[l].read_freq = stoi(tempstr);
+
+     getline(ss,tempstr,',');
+        if(tempstr=="1")
+        book[l].issued = 1;
+
+    l++;
+   }
+
+}
+else
+{
+    cerr<<"File not Exist!!";
+}
+
+read.close();
 
