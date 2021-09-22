@@ -182,24 +182,36 @@ system ("pause");
 void main_menu(){
 system ("cls");
  int choice;
+
+string str="Main Menu";
+HANDLE b= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(b,11);
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\t\t*                   "<<str;
+cout<<"\n\t\t***************************************************************\n";
+HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(d,7);
        cout <<"\n\n\n\n"<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
-        cout << setw(10)<< char(176)<<"select User or Admin to from the following  "<<endl;
+        cout << setw(10)<< char(176)<<"ARE YOU A USER OR AN ADMIN? "<<endl;
         cout << setw(15)<< char(176)<<"1. User"<<endl;
         cout << setw(15)<< char(176)<<"2. Admin"<<endl;
         cout << setw(15)<< char(176)<<"3. Exit"<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
         cin>>choice;
 
+
          switch (choice){
     case 1:
       user_option();
         break;
+
     case 2:
-    admin_option ();
+        password();
         break;
     case 3:
-        cout<<"\n\n\nThank You For Using Our Program...Bye!\n";
+        counter_updater('e');
+        thankyou();
         exit (EXIT_SUCCESS);
     }
 
