@@ -218,8 +218,18 @@ HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
 }
 //This function lists the services that the user will get in the library
 void user_option(){
-	system ("cls");
+
+system ("cls");
  char choice;
+
+string str="USER OPTIONS";
+HANDLE J= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(J,11);
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\t\t*                   "<<str;
+cout<<"\n\t\t***************************************************************\n";
+HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(d,7);
        cout <<"\n\n\n\n"<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
         cout << setw(15)<< char(176)<<"search books by"<<endl;
@@ -236,7 +246,8 @@ void user_option(){
         cout << setw(15)<< char(176)<<endl;
         cout << setw(15)<< char(176);      for(int i=0; i<90; i++){cout << char(205);} cout << char(176)<< endl;
         cout << setw(15)<< char(176);cout << setw(20)<< char(176)<<"i, Back to Main Menu"<<endl;
-	cin.clear();
+
+ cin.clear();
  cin.ignore(1000,'\n');
         cin>>choice;
 
@@ -253,7 +264,6 @@ else if(b=='i')
 
 
 }
-  
 //This is a function that shows the admin right or we can say privilage 	
 
 void admin_option (){
