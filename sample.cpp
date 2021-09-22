@@ -269,15 +269,15 @@ else if(b=='i')
 void admin_option (){
     system ("cls");
 system ("color 04");
-        int choice;	
-	cout <<"\n\n\n\n\n\n\n\n\n\n"<<endl;
+        int choice;
+    cout <<"\n\n\n\n\n\n\n\n"<<endl;
     cout << setw(40)<< char(176);
     for(int i=0; i<90; i++){cout << char(205);}
     cout << char(176)<< endl;
-	 system ("color F");
+    system ("color F");
     cout << setw(40)<< char(176);
     cout <<setw(55)<<"Administrator option ?"<< setw(61)<< char(176)<<endl;
-	HANDLE u= GetStdHandle(STD_OUTPUT_HANDLE);
+    HANDLE u= GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(u,2);
      cout << setw(40)<< char(176)<<setw(20)<<""<<"Books"<<endl;
     cout << setw(40)<< char(176)<<setw(5)<<"1, "<<"Book issue"<<endl;
@@ -303,11 +303,12 @@ system ("color 04");
     cout << char(176)<< endl;
     cout << setw(40)<< char(176);system ("cls");
     cout << setw(91)<< char(176);
-	HANDLE v= GetStdHandle(STD_OUTPUT_HANDLE);
+HANDLE v= GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(v,7);
 cin.clear();
  cin.ignore(1000,'\n');
-	switch(choice){
+
+switch(choice){
 case 1:
 isueOrReturnbook('i');
     break;
@@ -349,31 +350,47 @@ case 13:
 all_users();
     break;
 case 14:
-	statistics();
-     break;
-     
-case 15:
+statistics();
+    break;
+
+ case 15:
  main_menu();
     break;
+
 }
 
 }
-			
-	
  // This is a function to register multiple members at once
 void memberRegistration(){
+string str="REGISTERING NEW USER...";
+HANDLE b= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(b,11);
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\t\t*                   "<<str;
+cout<<"\n\t\t***************************************************************\n";
+cout<<"\n\n";
+HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
+    SetConsoleTextAttribute(d,7);
 
         addanother: // to register multiple members at once
 
-
-         cout<<"Enter Name : "; getline(cin,user[Ucounter].name);
-         cout<<"Enter ID : " ; getline(cin,user[Ucounter].user_id);
+        cout<<"Enter Name : "; getline(cin,user[Ucounter].name);
+        uid++;
+        user[Ucounter].user_id="u"+ to_string(uid);
          cout<<"Enter Age : ";  cin>>user[Ucounter].age;
          cout<<"Enter House no. : "; cin>>user[Ucounter]. user_address.house_no;
          cout<<"Enter Phone no. : ";  cin>>user[Ucounter]. user_address.phone;
 
+          ofstream write("Users.txt",ios::app);
+write<<user[Ucounter].name<<","<<user[Ucounter].user_id<<","<<user[Ucounter].age<<","<<user[Ucounter]. user_address.house_no<<","
+<<user[Ucounter]. user_address.phone<<","<<user[Ucounter].num_issued_book<<","
+<<user[Ucounter].issue_date.yy<<","<<user[Ucounter].issue_date.mm<<","<<user[Ucounter].issue_date.dd<<","
+<<user[Ucounter].return_date.yy<<","<<user[Ucounter].return_date.mm<<","<<user[Ucounter].return_date.dd<<","<<user[j].issued_book.issued<<"\n";
+write.close();
+
          cout<<"Member added successfully !"<<endl;
          Ucounter++;
+
          int choice ;
 
     cout<<"Do you want to Add another member 1(yes ) or 2(NO) "; cin>>choice;
@@ -382,9 +399,13 @@ void memberRegistration(){
 
        if (choice==1)
         goto addanother;
-
+else
+admin_option();
 
 }
+
+
+
 	// tis function deletes a library member when the member asks or in other cases 
 void deleteMember(){
       i=UserChecker();
