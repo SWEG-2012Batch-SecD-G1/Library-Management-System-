@@ -73,6 +73,7 @@ void password();
 void search_specific_user();
 void isueOrReturnbook(char);
 void thankyou();
+void Write(char c);
 //*******************************************
 
 int i,Bcounter=5,j;// it is a temporary declaration for the time being to show how it works  
@@ -1542,4 +1543,40 @@ cout<<"\n\t\t\t           %%     %%        %%%%         %%    %%                
        cout<<"\n\t\t\t\t      %%%        %%      %%      %%    %%            ";
        cout<<"\n\t\t\t\t      %%          %%    %%       %%    %%            ";
        cout<<"\n\t\t\t\t      %%            %%%%         %%%%%%%%                ";
+}
+void Write(char c){
+ofstream write;
+if(c=='b'){
+   write.open("Books.txt");
+for(int i=0; i<Bcounter; i++){
+  write<<book[i].book_id<<","<<book[i].title<<","<<book[i].author<<","
+<<book[i].shelf_no<<","<<book[i].catagory<<","<<book[i].quantity<<","<<book[i].isbn<<","
+<<book[i].edition<<","<<book[i].date_of_pub.yy<<","<<book[i].date_of_pub.mm<<","<<book[i].date_of_pub.dd<<","
+<<book[i].rate<<","<<book[i].read_freq<<","<<book[i].issued<<"\n";
+
+}
+
+}
+
+       if(c=='u'){
+        write.open("Users.txt");
+    for(int j=0; j<Ucounter;j++){
+        write<<user[j].name<<","<<user[j].user_id<<","<<user[j].age<<","<<user[j]. user_address.house_no<<","
+<<user[j]. user_address.phone<<","<<user[j].num_issued_book<<","
+<<user[j].issue_date.yy<<","<<user[j].issue_date.mm<<","<<user[j].issue_date.dd<<","
+<<user[j].return_date.yy<<","<<user[j].return_date.mm<<","<<user[j].return_date.dd<<","
+<<user[j].issued_book.issued<<","<<user[j].issued_book.book_id<<","<<user[j].issued_book.title<<"\n";
+
+}
+
+}
+
+ if(c=='s'){
+        write.open("stastics.txt");
+        write<<Fiction<<" "<<Science<<" "<<Art<<" "<<Self_help<<" "<<Religious<<" "<<Social_science<<" "
+        <<Amharic<<" "<<Research_book<<" "<<Programing<<" "<<other;
+ }
+
+  write.close();
+
 }
