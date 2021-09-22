@@ -1680,4 +1680,55 @@ else
 read.close();
 	
 }
+void counter_updater(char c){
+if(c=='s'){
+  ifstream coin("Bcounter.txt");
+if(!coin.fail()){
+  coin>>Bcounter;
+coin.close();
 
+coin.open("Ucounter.txt");
+coin>>Ucounter;
+coin.close();
+
+coin.open("bid.txt");
+coin>>bid;
+coin.close();
+
+coin.open("uid.txt");
+coin>>uid;
+coin.close();
+
+}
+else
+{
+    cerr<<"File not Exist!!";
+    getch();
+    exit(1);
+}
+
+
+}
+
+if(c=='e'){
+
+ofstream out;
+
+out.open("Bcounter.txt");
+out<<Bcounter;
+out.close();
+
+out.open("Ucounter.txt");
+out<<Ucounter;
+out.close();
+
+out.open("bid.txt");
+out<<bid;
+out.close();
+
+out.open("uid.txt");
+out<<uid;
+out.close();
+}
+
+}
