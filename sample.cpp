@@ -13,6 +13,7 @@
 #include<conio.h>
 #include<fstream>
 #include<sstream>
+#include<vector>
 using namespace std;
 
 ///***************************************************************
@@ -67,7 +68,6 @@ void by_rating();
 void recent_books();
 void all_books(char);
 void Backoption(char);
-void sampleData();
 void isueOrReturnbook(char);
 int userChecker();
 void addbook();
@@ -88,9 +88,16 @@ void increaseCatg(int ,int );
 void statistics();
 void thankyou();
 void counter_updater(char);
+void change_pass();
+void by_alphabet( );
 void Read();
 void Write(char);
-void activity_record(char n,int i);
+template<typename T>
+int indexOfSmallest(const T a[], int startIndex,int numberUsed);
+template<typename VariableType>
+void swapValues(VariableType& variable1,VariableType& variable2);
+template<typename U>
+void generic_sort(U a[], int numberUsed);
 
 
 
@@ -102,10 +109,9 @@ void activity_record(char n,int i);
 int i,j,Bcounter,Ucounter,bid,uid;
 bool stop=false;
 
-//User *user = new User[Ucounter];
-//Book *book= new Book[Bcounter];
-User user[1000];// = new User[Ucounter];
-Book book[1000];
+
+User *user = new User[Bcounter+1000];
+Book *book= new Book[Ucounter+ 1000];
 
  int Fiction, Science ,Art ,Self_help, Religious ,Social_science, Amharic  ,Research_book,Programing,other; // declaration and initialization
 //for number of books that currently exist in each category
@@ -113,14 +119,14 @@ Book book[1000];
 
 
 ///***************************************************************
+
 ///            FUNCTION DEFINITION STARTS HERE
 ///****************************************************************
 
 
 int main(){
-
-welcome();
 counter_updater('s');
+welcome();
 Read();
 
 while(!stop){
@@ -162,24 +168,6 @@ system ("pause");
 }
 
 
-//This function creates sample data
-void sampleData(){
-//sample books
-
-book[0]={"b100","c++","Mahri","A20","Programming",3,122,2,{2000,07,25},5,0,false};
-book[1]={"b101","Luxury life","Mahi Tz","A10","Self help",5,1224,2,{2015,07,25},5,0,false};
-book[2]={"b102","Tsom ","Mastewal","A20","Programming",8,4568,2,{2001,06,23},2,2,false};
-book[3]={"b103","Java","Matiyas","A20","Fiction",6,7892,2,{2021,04,10},3,1,false};
-book[4]={"b104","sql","Matiyas","A20","Religious",1,45587,2,{2020,04,15},4.5,3,false};
-
-//sample user
-user[0]={"Lebamlak","u100",20,{8040,"0942201994"},0};
-user[1]={"Kidus","u101",50,{7030,"0911111111"},0};
-user[2]={"Ibsa Berhanu","u102",60,{4564,"0922222222"},0};
-user[3]={"Chere Lemma","u103",30,{1415,"0933333333"},0};
-user[4]={"Jima Agaro","u104",13,{7856,"0944444444"},0};
-
-}
 
 
 void main_menu(){
@@ -581,7 +569,7 @@ void by_rating(){
       arr[i]=book[i].rate;
     int n = sizeof(arr) / sizeof(arr[0]);
     float arr1[Bcounter];
-sort(arr, arr + n);
+generic_sort<float>(arr,  n);
 
 for(int i=0; i<n;i++){
        if(arr[i]!=arr[i+1])
@@ -871,7 +859,6 @@ cout<<"\n\n";
 HANDLE d= GetStdHandle(STD_OUTPUT_HANDLE);
     SetConsoleTextAttribute(d,7);
        i=userChecker();
-       activity_record('d', i);
        for(int j=i; j<Ucounter;j++){  // this loop is to move the accounts forward
              user[j].name=user[j+1].name;
              user[j].user_id=user[j+1].user_id;
@@ -1101,7 +1088,8 @@ system ("color 04");
         cout << setw(40)<< char(176)<<setw(5)<<"12,"<<"Search specific user record"<<endl;
       cout << setw(40)<< char(176)<<setw(5)<<"13,"<<"Display all user record"<<endl;
       cout << setw(40)<< char(176)<<setw(5)<<"14,"<<"Statics "<<endl;
-       cout << setw(40)<< char(176)<<setw(5)<<"15,"<<"Back to Main Menu "<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"15,"<<"CHANGE PASSWORD"<<endl;
+       cout << setw(40)<< char(176)<<setw(5)<<"16,"<<"Back to Main Menu "<<endl;
         cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
         cout << setw(40)<< char(176)<<setw(50)<<" "<<endl;
         cout << setw(40)<< char(176)<<setw(30)<<" "<<"please your choice--> "; cin >>choice;
@@ -1158,8 +1146,10 @@ all_users();
 case 14:
 statistics();
     break;
-
- case 15:
+case 15:
+    change_pass();
+    break;
+ case 16:
  main_menu();
     break;
 
@@ -1172,7 +1162,9 @@ void password(){
 
 int attempt=0,ch;
     next_attempt:
-   string userName,password;
+   string userName,password,prv;
+   ifstream inp("pass.dat", ios::binary);
+getline(inp,prv);
          system("cls");
          string str="Login/Sign in ";
 HANDLE b= GetStdHandle(STD_OUTPUT_HANDLE);
@@ -1194,7 +1186,7 @@ cout<<" \n\n\n\t\t    Enter User Name -->  ";
 
   }
 
-if(userName=="5m" && password=="lib123")
+if(userName=="5m" && password==prv)
 {
  admin_option ();
 }
@@ -1597,7 +1589,58 @@ cout<<"\n\t\t\t           %%     %%        %%%%         %%    %%                
 }
 
 
+void counter_updater(char c){
+if(c=='s'){
+  ifstream coin("Bcounter.txt");
+if(!coin.fail()){
+  coin>>Bcounter;
+coin.close();
 
+coin.open("Ucounter.txt");
+coin>>Ucounter;
+coin.close();
+
+coin.open("bid.txt");
+coin>>bid;
+coin.close();
+
+coin.open("uid.txt");
+coin>>uid;
+coin.close();
+
+}
+else
+{
+    cerr<<"File not Exist!!";
+    getch();
+    exit(1);
+}
+
+
+}
+
+if(c=='e'){
+
+ofstream out;
+
+out.open("Bcounter.txt");
+out<<Bcounter;
+out.close();
+
+out.open("Ucounter.txt");
+out<<Ucounter;
+out.close();
+
+out.open("bid.txt");
+out<<bid;
+out.close();
+
+out.open("uid.txt");
+out<<uid;
+out.close();
+}
+
+}
 
 void Read(){
 string line,tempstr;
@@ -1741,76 +1784,112 @@ for(int i=0; i<Bcounter; i++){
 
 }
 
-void counter_updater(char c){
-if(c=='s'){
-  ifstream coin("Bcounter.txt");
-if(!coin.fail()){
-  coin>>Bcounter;
-coin.close();
 
-coin.open("Ucounter.txt");
-coin>>Ucounter;
-coin.close();
+void change_pass(){
+string newpass,curpass,prv;
 
-coin.open("bid.txt");
-coin>>bid;
-coin.close();
+ifstream inp("pass.dat", ios::binary);
+getline(inp,prv);
 
-coin.open("uid.txt");
-coin>>uid;
-coin.close();
+inp.close();
 
-}
-else
+cout<<"\nEnter the CURRENT PASSWORD: ";
+cin>>curpass;
+if(curpass==prv)
 {
-    cerr<<"File not Exist!!";
-    getch();
-    exit(1);
+  cout<<"Enter the NEW PASSWORD: ";
+cin>>newpass;
+
+    ofstream outp("pass.dat",ios::binary);
+    outp<<newpass;
+outp.close();
+
+cout<<"Password Changed Successfully!!!\n";
+
+}
+
+else{
+ cout<<"Password is Incorrect !!!\n\n";
+}
+system("pause");
+admin_option();
 }
 
 
-}
 
-if(c=='e'){
-
-ofstream out;
-
-out.open("Bcounter.txt");
-out<<Bcounter;
-out.close();
-
-out.open("Ucounter.txt");
-out<<Ucounter;
-out.close();
-
-out.open("bid.txt");
-out<<bid;
-out.close();
-
-out.open("uid.txt");
-out<<uid;
-out.close();
-}
-
-}
-void activity_record(char n,int i){
-    ofstream activity;
-activity.open("activity.txt",ios::app);
- if (!activity){
-    cout <<"your activity has been recorded"<<endl;
+template<typename T>
+int indexOfSmallest(const T a[], int startIndex,int numberUsed)
+{
+ T min = a[startIndex];
+ int indexOfMin = startIndex;
+ for (int index = startIndex + 1; index < numberUsed; index++)
+ {
+ if (a[index] < min)
+ {
+ min = a[index];
+ indexOfMin = index;
+ //min is the smallest of a[startIndex] through
+ //a[index]
  }
- switch (n){
- case 'd':
-
- string name;
- name=user[i].name;
-activity<<"name:  "<<name<<endl;
- activity<<"id:   :"<<user[i].user_id<<endl;
-activity<<"age:   "<<user[i].age<<endl;
-activity<<"house no:  "<<user[i].user_address.house_no<<endl;
-activity <<"phone:  "<<user[i].user_address.phone<<endl;
-cout <<"why this id not working"<<endl;
-break;
-//case 'b':
  }
+ return indexOfMin;
+}
+
+
+
+template<typename VariableType>
+void swapValues(VariableType& variable1,VariableType& variable2)
+{
+ VariableType temp;
+ temp = variable1;
+ variable1 = variable2;
+ variable2 = temp;
+}
+
+template<typename U>
+void generic_sort(U a[], int numberUsed)
+{
+ int indexOfNextSmallest;
+ for (int index = 0; index < numberUsed -1; index++)
+ {//Place the correct value in a[index]:
+ indexOfNextSmallest = indexOfSmallest(a, index, numberUsed);
+ swapValues(a[index], a[indexOfNextSmallest]);
+
+ }
+}
+
+
+
+
+void by_alphabet( ){
+    int Num_search[Bcounter],counter=0,counterr=0;
+          string arr[Bcounter];
+    for (int i=0;i<Bcounter;i++)
+      arr[i]=book[i].title;
+    int n = sizeof(arr) / sizeof(arr[0]);
+    string arr1[Bcounter];
+
+
+
+generic_sort(arr, n);
+
+for(int i=0; i<n;i++){
+       if(arr[i]!=arr[i+1])
+            {
+                arr1[counterr]=arr[i];
+                counterr++;
+
+            }
+}
+
+for(int i=counterr; i>=0;i--)
+    for(int j=0;j<Bcounter;j++){
+       if(arr1[i]==book[j].title){
+  Num_search[counter]=j;
+            counter++;
+}
+    }
+
+display (Num_search,counter,"SORTED BY ALPHABET");
+Backoption('u');
 }
