@@ -92,6 +92,12 @@ void change_pass();
 void by_alphabet( );
 void Read();
 void Write(char);
+
+
+///***************************************************************
+///                   Templates Used in IN PROJECT
+///****************************************************************
+
 template<typename T>
 int indexOfSmallest(const T a[], int startIndex,int numberUsed);
 template<typename VariableType>
@@ -120,7 +126,7 @@ Book *book= new Book[Ucounter+ 1000];
 
 ///***************************************************************
 
-///            FUNCTION DEFINITION STARTS HERE
+///            THE MAIN FUNCTION 
 ///****************************************************************
 
 
@@ -135,6 +141,12 @@ while(!stop){
 counter_updater('e');
 return 0;
 }
+
+
+///***************************************************************
+
+///            FUNCTION DEFINITION STARTS HERE
+///****************************************************************
 
 
 void welcome(){
